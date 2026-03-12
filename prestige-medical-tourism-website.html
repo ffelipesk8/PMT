@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestige Medical Tourism | Premium Medical Care in Medellín</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D5A3;
+    --gold-dark: #8B6914;
+    --black: #0A0A0A;
+    --black-2: #111111;
+    --black-3: #1A1A1A;
+    --black-4: #222222;
+    --white: #F5F0E8;
+    --white-dim: rgba(245,240,232,0.7);
+    --white-faint: rgba(245,240,232,0.15);
+    --border: rgba(201,168,76,0.25);
+    --border-strong: rgba(201,168,76,0.6);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .gold { color: var(--gold); }
+  .gold-text { color: var(--gold-light); }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.95);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 4rem;
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-logo span {
+    display: block;
+    font-size: 0.55rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    color: var(--white-dim);
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .lang-toggle {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--white-dim);
+    padding: 0.3rem 0.7rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
+      linear-gradient(180deg, #0A0A0A 0%, #111111 50%, #0A0A0A 100%);
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 0 2rem;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    animation: fadeUp 1.2s 0.2s ease both;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1.2s 0.3s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-tagline {
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-weight: 200;
+    letter-spacing: 0.2em;
+    color: var(--white-dim);
+    margin-bottom: 3rem;
+    animation: fadeUp 1.2s 0.4s ease both;
+  }
+
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 3rem;
+    animation: fadeUp 1.2s 0.5s ease both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 1.2s 0.6s ease both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 1rem 2.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    padding: 1rem 2.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.4;
+    animation: fadeUp 1.2s 1s ease both;
+  }
+  .scroll-hint span {
+    font-size: 0.5rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+    50% { opacity: 0.8; transform: scaleY(1); }
+  }
+
+  /* SECTION COMMON */
+  section { padding: 8rem 4rem; }
+
+  .section-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--white-dim);
+    line-height: 1.8;
+    max-width: 600px;
+  }
+
+  .gold-line {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.5rem 0;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--black-2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .stat-card {
+    background: var(--black-3);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--border);
+    transition: border-color 0.3s;
+  }
+  .stat-card:hover { border-color: var(--gold); }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  /* SERVICES */
+  .services {
+    background: var(--black);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--black-3);
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
+
+  .service-card:hover::before { transform: translateX(0); }
+  .service-card:hover { background: var(--black-4); border-color: var(--border-strong); }
+  .service-card:hover .service-arrow { opacity: 1; transform: translateX(0); }
+
+  .service-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+  }
+
+  .service-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+
+  .service-desc {
+    font-size: 0.72rem;
+    line-height: 1.9;
+    color: var(--white-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-list {
+    list-style: none;
+  }
+  .service-list li {
+    font-size: 0.65rem;
+    color: var(--white-dim);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .service-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .service-arrow {
+    margin-top: 2rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  /* RECOVERY */
+  .recovery {
+    background: linear-gradient(135deg, #0F0F0F 0%, #161410 50%, #0F0F0F 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .recovery::before {
+    content: 'RECOVERY';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18vw;
+    font-weight: 300;
+    color: rgba(201,168,76,0.03);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .recovery-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+    align-items: center;
+    position: relative;
+  }
+
+  .recovery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .recovery-item {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    background: rgba(201,168,76,0.03);
+    transition: all 0.3s;
+  }
+  .recovery-item:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+
+  .recovery-item-icon {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+
+  .recovery-item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .recovery-item-desc {
+    font-size: 0.65rem;
+    color: var(--white-dim);
+    line-height: 1.8;
+  }
+
+  /* VIP EXPERIENCE */
+  .vip {
+    background: var(--black-2);
+    text-align: center;
+  }
+
+  .vip-inner { max-width: 1200px; margin: 0 auto; }
+
+  .vip-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 5rem;
+    position: relative;
+  }
+
+  .vip-steps::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold), var(--gold), transparent);
+    opacity: 0.3;
+  }
+
+  .vip-step {
+    padding: 0 2rem;
+    position: relative;
+  }
+
+  .vip-step-num {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    background: var(--black-2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .vip-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .vip-step p {
+    font-size: 0.68rem;
+    color: var(--white-dim);
+    line-height: 1.8;
+  }
+
+  /* LOCATIONS / WHY MEDELLIN */
+  .medellin {
+    background: var(--black);
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .medellin-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .medellin-feat {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .feat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    opacity: 0.4;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+  }
+
+  .feat-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .feat-content p {
+    font-size: 0.7rem;
+    color: var(--white-dim);
+    line-height: 1.8;
+  }
+
+  /* SPECIALTIES HIGHLIGHT */
+  .specialties-highlight {
+    background: var(--black-3);
+    text-align: center;
+    padding: 6rem 4rem;
+  }
+
+  .specialties-strip {
+    display: flex;
+    gap: 3rem;
+    overflow: hidden;
+    margin-top: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .specialty-pill {
+    padding: 0.7rem 1.8rem;
+    border: 1px solid var(--border);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .specialty-pill:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* CONTACT / CTA */
+  .contact-cta {
+    background: var(--black-2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .contact-inner {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .contact-inner h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+  }
+  .contact-inner p {
+    font-size: 0.85rem;
+    color: var(--white-dim);
+    line-height: 1.9;
+    margin-bottom: 3rem;
+  }
+
+  .contact-options {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+
+  .contact-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem 3rem;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+  }
+  .contact-option:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
+
+  .contact-option-icon { font-size: 1.2rem; opacity: 0.6; }
+  .contact-option-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .contact-option-value {
+    font-size: 0.8rem;
+    color: var(--white-dim);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.7rem;
+    color: var(--white-dim);
+    line-height: 1.9;
+    margin-top: 1.5rem;
+    max-width: 280px;
+  }
+
+  .footer-col h5 {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--white-dim);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    transition: color 0.3s;
+  }
+  .footer-col a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom span {
+    font-size: 0.6rem;
+    color: rgba(245,240,232,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    nav { padding: 1.5rem 2rem; }
+    section { padding: 6rem 2rem; }
+    .about, .medellin { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .vip-steps { grid-template-columns: 1fr 1fr; }
+    .vip-steps::before { display: none; }
+    footer { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .recovery-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .vip-steps { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .recovery-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  /* HIDDEN CLASS FOR LANG */
+  [data-lang] { display: none; }
+  [data-lang="en"].lang-en { display: block; }
+  [data-lang="es"].lang-es { display: block; }
+  body.lang-en [data-lang="en"] { display: block; }
+  body.lang-en [data-lang="es"] { display: none; }
+  body.lang-es [data-lang="en"] { display: none; }
+  body.lang-es [data-lang="es"] { display: block; }
+  [data-lang-inline="en"], [data-lang-inline="es"] { display: none; }
+  body.lang-en [data-lang-inline="en"] { display: inline; }
+  body.lang-es [data-lang-inline="es"] { display: inline; }
+
+  /* ANIMATIONS ON SCROLL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    Prestige Medical Tourism
+    <span>Medellín, Colombia</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">
+      <span data-lang-inline="en">Services</span>
+      <span data-lang-inline="es">Servicios</span>
+    </a></li>
+    <li><a href="#recovery">Recovery</a></li>
+    <li><a href="#vip">
+      <span data-lang-inline="en">VIP Experience</span>
+      <span data-lang-inline="es">Experiencia VIP</span>
+    </a></li>
+    <li><a href="#why">
+      <span data-lang-inline="en">Why Medellín</span>
+      <span data-lang-inline="es">Por qué Medellín</span>
+    </a></li>
+    <li><a href="#contact">
+      <span data-lang-inline="en">Contact</span>
+      <span data-lang-inline="es">Contacto</span>
+    </a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">
+      <span data-lang-inline="en">Medellín, Colombia · World-Class Medicine</span>
+      <span data-lang-inline="es">Medellín, Colombia · Medicina de Clase Mundial</span>
+    </p>
+    <h1>
+      <span data-lang-inline="en"><em>Prestige</em><br>Medical Tourism</span>
+      <span data-lang-inline="es"><em>Prestige</em><br>Medical Tourism</span>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline" data-lang="en">Your journey to health, beauty and longevity — elevated to the extraordinary.</p>
+    <p class="hero-tagline" data-lang="es">Tu viaje hacia la salud, la belleza y la longevidad — elevado a lo extraordinario.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">
+        <span data-lang-inline="en">Begin Your Journey</span>
+        <span data-lang-inline="es">Comienza Tu Viaje</span>
+      </a>
+      <a href="#services" class="btn-outline">
+        <span data-lang-inline="en">Explore Services</span>
+        <span data-lang-inline="es">Ver Servicios</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="reveal">
+    <p class="section-label">
+      <span data-lang-inline="en">About PMT</span>
+      <span data-lang-inline="es">Sobre PMT</span>
+    </p>
+    <h2 class="section-title" data-lang="en">Medicine at the<br><em>Highest Standard</em></h2>
+    <h2 class="section-title" data-lang="es">Medicina al<br><em>Más Alto Nivel</em></h2>
+    <div class="gold-line"></div>
+    <p class="section-subtitle" data-lang="en">Prestige Medical Tourism connects international patients with world-class medical specialists, cutting-edge treatments, and a complete VIP experience in Medellín — Latin America's premier medical destination. Every journey is personal, safe, and fully accompanied.</p>
+    <p class="section-subtitle" data-lang="es">Prestige Medical Tourism conecta pacientes internacionales con especialistas médicos de clase mundial, tratamientos de vanguardia y una experiencia VIP completa en Medellín — el principal destino de turismo médico de América Latina. Cada viaje es personal, seguro y completamente acompañado.</p>
+  </div>
+  <div class="about-stats reveal">
+    <div class="stat-card">
+      <div class="stat-number">15+</div>
+      <div class="stat-label" data-lang="en">Medical Specialties</div>
+      <div class="stat-label" data-lang="es">Especialidades Médicas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">100%</div>
+      <div class="stat-label" data-lang="en">VIP Accompaniment</div>
+      <div class="stat-label" data-lang="es">Acompañamiento VIP</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label" data-lang="en">Patient Support</div>
+      <div class="stat-label" data-lang="es">Soporte al Paciente</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3x</div>
+      <div class="stat-label" data-lang="en">Lower Cost vs. USA</div>
+      <div class="stat-label" data-lang="es">Menor Costo vs. EE.UU.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background: var(--black); padding: 8rem 4rem;">
+  <div class="services-header reveal" style="text-align:center; max-width:1400px; margin:0 auto 5rem;">
+    <p class="section-label">
+      <span data-lang-inline="en">Medical Specialties</span>
+      <span data-lang-inline="es">Especialidades Médicas</span>
+    </p>
+    <h2 class="section-title" data-lang="en">Our <em>Services</em></h2>
+    <h2 class="section-title" data-lang="es">Nuestros <em>Servicios</em></h2>
+  </div>
+  <div class="services-grid" style="max-width:1400px; margin:0 auto;" >
+
+    <div class="service-card reveal">
+      <div class="service-icon">🧠</div>
+      <h3 class="service-title" data-lang="en">Brain Health &amp; Neurotechnology</h3>
+      <h3 class="service-title" data-lang="es">Salud Cerebral &amp; Neurotecnología</h3>
+      <ul class="service-list" data-lang="en">
+        <li>Brain mapping</li>
+        <li>Brain training programs</li>
+        <li>Cognitive optimization</li>
+        <li>Advanced neurological therapies</li>
+        <li>Memory &amp; focus enhancement</li>
+      </ul>
+      <ul class="service-list" data-lang="es">
+        <li>Mapeo cerebral</li>
+        <li>Entrenamiento cerebral</li>
+        <li>Optimización cognitiva</li>
+        <li>Terapias neurológicas avanzadas</li>
+        <li>Mejora de memoria y concentración</li>
+      </ul>
+      <div class="service-arrow">
+        <span data-lang-inline="en">Learn More →</span>
+        <span data-lang-inline="es">Saber Más →</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">✦</div>
+      <h3 class="service-title" data-lang="en">Regenerative Medicine &amp; Longevity</h3>
+      <h3 class="service-title" data-lang="es">Medicina Regenerativa &amp; Longevidad</h3>
+      <ul class="service-list" data-lang="en">
+        <li>Stem cell therapies</li>
+        <li>Exosome treatments</li>
+        <li>NAD+ therapies</li>
+        <li>Anti-aging protocols</li>
+        <li>Cellular regeneration</li>
+      </ul>
+      <ul class="service-list" data-lang="es">
+        <li>Terapias con células madre</li>
+        <li>Tratamientos con exosomas</li>
+        <li>Terapias con NAD+</li>
+        <li>Protocolos anti-envejecimiento</li>
+        <li>Regeneración celular</li>
+      </ul>
+      <div class="service-arrow">
+        <span data-lang-inline="en">Learn More →</span>
+        <span data-lang-inline="es">Saber Más →</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">◈</div>
+      <h3 class="service-title" data-lang="en">Aesthetic Medicine</h3>
+      <h3 class="service-title" data-lang="es">Medicina Estética</h3>
+      <ul class="service-list" data-lang="en">
+        <li>Botox &amp; hyaluronic acid</li>
+        <li>Facial rejuvenation</li>
+        <li>Laser treatments</li>
+        <li>Facial harmonization</li>
+        <li>Bio-stimulators</li>
+      </ul>
+      <ul class="service-list" data-lang="es">
+        <li>Botox y ácido hialurónico</li>
+        <li>Rejuvenecimiento facial</li>
+        <li>Tratamientos con láser</li>
+        <li>Armonización facial</li>
+        <li>Bioestimuladores</li>
+      </ul>
+      <div class="service-arrow">
+        <span data-lang-inline="en">Learn More →</span>
+        <span data-lang-inline="es">Saber Más →</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">⬡</div>
+      <h3 class="service-title" data-lang="en">Plastic &amp; Reconstructive Surgery</h3>
+      <h3 class="service-title" data-lang="es">Cirugía Plástica &amp; Reconstructiva</h3>
+      <ul class="service-list" data-lang="en">
+        <li>Facelift &amp; blepharoplasty</li>
+        <li>Rhinoplasty</li>
+        <li>Liposuction &amp; abdominoplasty</li>
+        <li>Breast augmentation &amp; lift</li>
+        <li>Body contouring</li>
+      </ul>
+      <ul class="service-list" data-lang="es">
+        <li>Lifting facial &amp; blefaroplastia</li>
+        <li>Rinoplastia</li>
+        <li>Liposucción y abdominoplastia</li>
+        <li>Aumento y levantamiento de senos</li>
+        <li>Contorno corporal</li>
+      </ul>
+      <div class="service-arrow">
+        <span data-lang-inline="en">Learn More →</span>
+        <span data-lang-inline="es">Saber Más →</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">◇</div>
+      <h3 class="service-title" data-lang="en">Dental Aesthetics &amp; Oral Rehab</h3>
+      <h3 class="service-title" data-lang="es">Odontología Estética &amp; Rehabilitación Oral</h3>
+      <ul class="service-list" data-lang="en">
+        <li>Smile design</li>
+        <li>Dental veneers</li>
+        <li>Dental implants</li>
+        <li>Crowns &amp; oral rehabilitation</li>
+        <li>Teeth whitening</li>
+      </ul>
+      <ul class="service-list" data-lang="es">
+        <li>Diseño de sonrisa</li>
+        <li>Carillas dentales</li>
+        <li>Implantes dentales</li>
+        <li>Coronas y rehabilitación oral</li>
+        <li>Blanqueamiento dental</li>
+      </ul>
+      <div class="service-arrow">
+        <span data-lang-inline="en">Learn More →</span>
+        <span data-lang-inline="es">Saber Más →</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-icon">○</div>
+      <h3 class="service-title" data-lang="en">More Specialties</h3>
+      <h3 class="service-title" data-lang="es">Más Especialidades</h3>
+      <ul class="service-list" data-lang="en">
+        <li>Hair restoration &amp; transplant</li>
+        <li>Gender affirmation surgery</li>
+        <li>Fertility &amp; reproductive medicine</li>
+        <li>Orthopedics &amp; sports medicine</li>
+        <li>Intimate male surgery</li>
+      </ul>
+      <ul class="service-list" data-lang="es">
+        <li>Restauración &amp; trasplante capilar</li>
+        <li>Cirugía de afirmación de género</li>
+        <li>Fertilidad y medicina reproductiva</li>
+        <li>Ortopedia y medicina deportiva</li>
+        <li>Cirugía íntima masculina</li>
+      </ul>
+      <div class="service-arrow">
+        <span data-lang-inline="en">Learn More →</span>
+        <span data-lang-inline="es">Saber Más →</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RECOVERY -->
+<section class="recovery" id="recovery">
+  <div class="recovery-inner">
+    <div class="reveal">
+      <p class="section-label">Recovery</p>
+      <h2 class="section-title" data-lang="en">Advanced<br><em>Recovery Included</em></h2>
+      <h2 class="section-title" data-lang="es">Recuperación<br><em>Avanzada Incluida</em></h2>
+      <div class="gold-line"></div>
+      <p class="section-subtitle" data-lang="en">Every service at PMT includes a specialized recovery program engineered to optimize results and accelerate your healing — with cutting-edge therapies available from day one.</p>
+      <p class="section-subtitle" data-lang="es">Todos nuestros servicios incluyen un programa especializado de recuperación diseñado para optimizar los resultados y acelerar tu sanación — con terapias de vanguardia disponibles desde el primer día.</p>
+    </div>
+    <div class="recovery-grid reveal">
+      <div class="recovery-item">
+        <div class="recovery-item-icon">⊕</div>
+        <div class="recovery-item-name" data-lang="en">Hyperbaric Chamber</div>
+        <div class="recovery-item-name" data-lang="es">Cámara Hiperbárica</div>
+        <div class="recovery-item-desc" data-lang="en">Accelerates tissue healing with pressurized oxygen therapy</div>
+        <div class="recovery-item-desc" data-lang="es">Acelera la cicatrización con oxigenoterapia hiperbárica</div>
+      </div>
+      <div class="recovery-item">
+        <div class="recovery-item-icon">❋</div>
+        <div class="recovery-item-name" data-lang="en">Therapeutic Massage</div>
+        <div class="recovery-item-name" data-lang="es">Masaje Terapéutico</div>
+        <div class="recovery-item-desc" data-lang="en">Expert physiotherapeutic massage for recovery and wellbeing</div>
+        <div class="recovery-item-desc" data-lang="es">Masaje fisioterapéutico experto para recuperación y bienestar</div>
+      </div>
+      <div class="recovery-item">
+        <div class="recovery-item-icon">◐</div>
+        <div class="recovery-item-name" data-lang="en">Infrared Light</div>
+        <div class="recovery-item-name" data-lang="es">Luz Infrarroja</div>
+        <div class="recovery-item-desc" data-lang="en">Deep-tissue regeneration through photobiomodulation</div>
+        <div class="recovery-item-desc" data-lang="es">Regeneración profunda mediante fotobiomodulación</div>
+      </div>
+      <div class="recovery-item">
+        <div class="recovery-item-icon">✧</div>
+        <div class="recovery-item-name" data-lang="en">Cryotherapy</div>
+        <div class="recovery-item-name" data-lang="es">Crioterapia</div>
+        <div class="recovery-item-desc" data-lang="en">Whole-body cold therapy to reduce inflammation</div>
+        <div class="recovery-item-desc" data-lang="es">Terapia de frío corporal para reducir la inflamación</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIP EXPERIENCE -->
+<section class="vip" id="vip">
+  <div class="vip-inner">
+    <div class="reveal">
+      <p class="section-label">
+        <span data-lang-inline="en">VIP Experience</span>
+        <span data-lang-inline="es">Experiencia VIP</span>
+      </p>
+      <h2 class="section-title" data-lang="en">Every Detail,<br><em>Taken Care Of</em></h2>
+      <h2 class="section-title" data-lang="es">Cada Detalle,<br><em>Bajo Control</em></h2>
+      <div class="gold-line" style="margin: 1.5rem auto;"></div>
+      <p class="section-subtitle" style="margin: 0 auto;" data-lang="en">From the moment you land in Medellín until your safe return home, our concierge team is with you at every step.</p>
+      <p class="section-subtitle" style="margin: 0 auto;" data-lang="es">Desde el momento en que aterrizas en Medellín hasta tu regreso seguro a casa, nuestro equipo de concierge está contigo en cada paso.</p>
+    </div>
+    <div class="vip-steps reveal">
+      <div class="vip-step">
+        <div class="vip-step-num">01</div>
+        <h4 data-lang="en">Arrival</h4>
+        <h4 data-lang="es">Llegada</h4>
+        <p data-lang="en">VIP airport pickup, private transport to your luxury hotel, welcome briefing with your personal coordinator.</p>
+        <p data-lang="es">Recogida VIP en el aeropuerto, transporte privado a tu hotel de lujo, bienvenida con tu coordinador personal.</p>
+      </div>
+      <div class="vip-step">
+        <div class="vip-step-num">02</div>
+        <h4 data-lang="en">Consultation</h4>
+        <h4 data-lang="es">Consulta</h4>
+        <p data-lang="en">Expert medical consultations with leading specialists, personalized treatment plan, and complete pre-procedure care.</p>
+        <p data-lang="es">Consultas con especialistas líderes, plan de tratamiento personalizado y cuidado pre-procedimiento completo.</p>
+      </div>
+      <div class="vip-step">
+        <div class="vip-step-num">03</div>
+        <h4 data-lang="en">Treatment</h4>
+        <h4 data-lang="es">Tratamiento</h4>
+        <p data-lang="en">Your procedure performed at a top-tier certified clinic, with bilingual assistance and nursing care throughout.</p>
+        <p data-lang="es">Tu procedimiento en una clínica certificada de primer nivel, con asistencia bilingüe y enfermería durante todo el proceso.</p>
+      </div>
+      <div class="vip-step">
+        <div class="vip-step-num">04</div>
+        <h4 data-lang="en">Recovery</h4>
+        <h4 data-lang="es">Recuperación</h4>
+        <p data-lang="en">Advanced recovery therapies, relaxation massage, follow-up care, and full accompaniment until your departure.</p>
+        <p data-lang="es">Terapias avanzadas de recuperación, masaje de relajación, seguimiento y acompañamiento completo hasta tu partida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MEDELLIN -->
+<section id="why" style="padding: 8rem 4rem;">
+  <div class="medellin">
+    <div class="reveal">
+      <p class="section-label">
+        <span data-lang-inline="en">Why Medellín</span>
+        <span data-lang-inline="es">Por qué Medellín</span>
+      </p>
+      <h2 class="section-title" data-lang="en">Latin America's<br><em>Medical Capital</em></h2>
+      <h2 class="section-title" data-lang="es">La Capital Médica<br><em>de América Latina</em></h2>
+      <div class="gold-line"></div>
+      <p class="section-subtitle" data-lang="en">Medellín has emerged as one of the world's top destinations for medical tourism, combining internationally trained specialists, modern certified facilities, and exceptional value — with the warmth of Colombia as your backdrop.</p>
+      <p class="section-subtitle" data-lang="es">Medellín se ha posicionado como uno de los principales destinos mundiales de turismo médico, combinando especialistas formados internacionalmente, instalaciones certificadas modernas y un valor excepcional — con la calidez de Colombia como telón de fondo.</p>
+    </div>
+    <div class="medellin-features reveal">
+      <div class="medellin-feat">
+        <div class="feat-num">01</div>
+        <div class="feat-content">
+          <h4 data-lang="en">World-Class Specialists</h4>
+          <h4 data-lang="es">Especialistas de Clase Mundial</h4>
+          <p data-lang="en">Surgeons and physicians trained at top international programs, many with US, European, and UK board certifications.</p>
+          <p data-lang="es">Cirujanos y médicos formados en los mejores programas internacionales, muchos con certificaciones de EE.UU., Europa y el Reino Unido.</p>
+        </div>
+      </div>
+      <div class="medellin-feat">
+        <div class="feat-num">02</div>
+        <div class="feat-content">
+          <h4 data-lang="en">Savings of 50–75%</h4>
+          <h4 data-lang="es">Ahorro del 50–75%</h4>
+          <p data-lang="en">Access identical quality procedures at a fraction of US and European prices — without compromising on safety or results.</p>
+          <p data-lang="es">Accede a procedimientos de idéntica calidad a una fracción del precio de EE.UU. y Europa — sin comprometer seguridad ni resultados.</p>
+        </div>
+      </div>
+      <div class="medellin-feat">
+        <div class="feat-num">03</div>
+        <div class="feat-content">
+          <h4 data-lang="en">Certified Medical Facilities</h4>
+          <h4 data-lang="es">Instalaciones Médicas Certificadas</h4>
+          <p data-lang="en">JCI-accredited hospitals and cutting-edge specialized clinics equipped with the latest medical technology.</p>
+          <p data-lang="es">Hospitales acreditados por JCI y clínicas especializadas de vanguardia equipadas con la última tecnología médica.</p>
+        </div>
+      </div>
+      <div class="medellin-feat">
+        <div class="feat-num">04</div>
+        <div class="feat-content">
+          <h4 data-lang="en">Eternal Spring Climate</h4>
+          <h4 data-lang="es">Clima de Eterna Primavera</h4>
+          <p data-lang="en">Medellín's perfect year-round climate of 22–28°C creates ideal conditions for recovery and recuperation.</p>
+          <p data-lang="es">El clima perfecto de Medellín durante todo el año (22–28°C) crea condiciones ideales para la recuperación.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTY PILLS -->
+<section class="specialties-highlight">
+  <div class="reveal">
+    <p class="section-label">
+      <span data-lang-inline="en">All Specialties</span>
+      <span data-lang-inline="es">Todas las Especialidades</span>
+    </p>
+    <h2 class="section-title" data-lang="en">Complete <em>Medical Coverage</em></h2>
+    <h2 class="section-title" data-lang="es">Cobertura <em>Médica Completa</em></h2>
+  </div>
+  <div class="specialties-strip reveal">
+    <div class="specialty-pill" data-lang="en">Stem Cell Therapy</div>
+    <div class="specialty-pill" data-lang="es">Células Madre</div>
+    <div class="specialty-pill" data-lang="en">Plastic Surgery</div>
+    <div class="specialty-pill" data-lang="es">Cirugía Plástica</div>
+    <div class="specialty-pill" data-lang="en">Brain Mapping</div>
+    <div class="specialty-pill" data-lang="es">Mapeo Cerebral</div>
+    <div class="specialty-pill" data-lang="en">Dental Veneers</div>
+    <div class="specialty-pill" data-lang="es">Carillas Dentales</div>
+    <div class="specialty-pill" data-lang="en">IVF Fertility</div>
+    <div class="specialty-pill" data-lang="es">Fertilidad FIV</div>
+    <div class="specialty-pill" data-lang="en">Hair Transplant</div>
+    <div class="specialty-pill" data-lang="es">Trasplante Capilar</div>
+    <div class="specialty-pill" data-lang="en">Rhinoplasty</div>
+    <div class="specialty-pill" data-lang="es">Rinoplastia</div>
+    <div class="specialty-pill" data-lang="en">NAD+ Therapy</div>
+    <div class="specialty-pill" data-lang="es">Terapia NAD+</div>
+    <div class="specialty-pill" data-lang="en">Liposuction</div>
+    <div class="specialty-pill" data-lang="es">Liposucción</div>
+    <div class="specialty-pill" data-lang="en">Cryotherapy</div>
+    <div class="specialty-pill" data-lang="es">Crioterapia</div>
+    <div class="specialty-pill" data-lang="en">Gender Affirmation</div>
+    <div class="specialty-pill" data-lang="es">Afirmación de Género</div>
+    <div class="specialty-pill" data-lang="en">Orthopedics</div>
+    <div class="specialty-pill" data-lang="es">Ortopedia</div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="contact-cta" id="contact">
+  <div class="contact-inner reveal">
+    <p class="section-label">
+      <span data-lang-inline="en">Start Today</span>
+      <span data-lang-inline="es">Empieza Hoy</span>
+    </p>
+    <h2 data-lang="en">Ready to Begin<br><em>Your Journey?</em></h2>
+    <h2 data-lang="es">¿Listo Para Comenzar<br><em>Tu Viaje?</em></h2>
+    <div class="gold-line" style="margin: 1.5rem auto;"></div>
+    <p data-lang="en">Contact our concierge team today for a free, confidential consultation. We'll design a personalized medical journey tailored to your goals, timeline, and budget.</p>
+    <p data-lang="es">Contacta a nuestro equipo de concierge hoy para una consulta gratuita y confidencial. Diseñaremos un viaje médico personalizado adaptado a tus objetivos, calendario y presupuesto.</p>
+    <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top: 2rem;">
+      <a href="https://wa.me/573000000000" class="btn-primary">
+        <span data-lang-inline="en">WhatsApp Us</span>
+        <span data-lang-inline="es">Escríbenos por WhatsApp</span>
+      </a>
+      <a href="mailto:info@prestigemedicaltourism.com" class="btn-outline">
+        <span data-lang-inline="en">Send Email</span>
+        <span data-lang-inline="es">Enviar Email</span>
+      </a>
+    </div>
+    <div class="contact-options">
+      <div class="contact-option">
+        <div class="contact-option-icon">✉</div>
+        <div class="contact-option-label">Email</div>
+        <div class="contact-option-value">info@prestigemedicaltourism.com</div>
+      </div>
+      <div class="contact-option">
+        <div class="contact-option-icon">⊕</div>
+        <div class="contact-option-label">Web</div>
+        <div class="contact-option-value">prestigemedicaltourism.com</div>
+      </div>
+      <div class="contact-option">
+        <div class="contact-option-icon">◎</div>
+        <div class="contact-option-label">
+          <span data-lang-inline="en">Location</span>
+          <span data-lang-inline="es">Ubicación</span>
+        </div>
+        <div class="contact-option-value">Medellín, Colombia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--gold); letter-spacing:0.2em;">PRESTIGE</div>
+    <div style="font-size:0.55rem; letter-spacing:0.4em; color:var(--white-dim); margin-top:3px; text-transform:uppercase;">Medical Tourism</div>
+    <p data-lang="en">Premium medical tourism services in Medellín, Colombia. Connecting international patients with world-class care and a complete VIP experience.</p>
+    <p data-lang="es">Servicios premium de turismo médico en Medellín, Colombia. Conectamos pacientes internacionales con atención de clase mundial y una experiencia VIP completa.</p>
+  </div>
+  <div class="footer-col">
+    <h5 data-lang="en">Services</h5>
+    <h5 data-lang="es">Servicios</h5>
+    <a href="#services" data-lang="en">Brain Health</a>
+    <a href="#services" data-lang="es">Salud Cerebral</a>
+    <a href="#services" data-lang="en">Regenerative Medicine</a>
+    <a href="#services" data-lang="es">Medicina Regenerativa</a>
+    <a href="#services" data-lang="en">Plastic Surgery</a>
+    <a href="#services" data-lang="es">Cirugía Plástica</a>
+    <a href="#services" data-lang="en">Dental Aesthetics</a>
+    <a href="#services" data-lang="es">Odontología Estética</a>
+    <a href="#services" data-lang="en">Fertility</a>
+    <a href="#services" data-lang="es">Fertilidad</a>
+  </div>
+  <div class="footer-col">
+    <h5 data-lang="en">Experience</h5>
+    <h5 data-lang="es">Experiencia</h5>
+    <a href="#recovery" data-lang="en">Recovery Program</a>
+    <a href="#recovery" data-lang="es">Programa de Recuperación</a>
+    <a href="#vip" data-lang="en">VIP Transport</a>
+    <a href="#vip" data-lang="es">Transporte VIP</a>
+    <a href="#vip" data-lang="en">Bilingual Assistance</a>
+    <a href="#vip" data-lang="es">Asistencia Bilingüe</a>
+    <a href="#vip" data-lang="en">Hotel &amp; Accommodation</a>
+    <a href="#vip" data-lang="es">Hotel y Alojamiento</a>
+  </div>
+  <div class="footer-col">
+    <h5 data-lang="en">Contact</h5>
+    <h5 data-lang="es">Contacto</h5>
+    <a href="mailto:info@prestigemedicaltourism.com">info@prestigemedicaltourism.com</a>
+    <a href="https://prestigemedicaltourism.com">prestigemedicaltourism.com</a>
+    <a href="#" data-lang="en">Medellín, Colombia</a>
+    <a href="#" data-lang="es">Medellín, Colombia</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Prestige Medical Tourism · Medellín, Colombia</span>
+  <span data-lang="en">All rights reserved · prestigemedicaltourism.com</span>
+  <span data-lang="es">Todos los derechos reservados · prestigemedicaltourism.com</span>
+</div>
+
+<script>
+function setLang(lang) {
+  document.body.className = 'lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    if (btn.textContent.trim() === lang.toUpperCase()) btn.classList.add('active');
+  });
+  document.documentElement.lang = lang;
+}
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

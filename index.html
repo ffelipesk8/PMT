@@ -95,11 +95,23 @@ nav.scrolled{background:rgba(7,17,27,.72);backdrop-filter:blur(18px);border-bott
 .hero-orbit{position:absolute;inset:7% auto auto 8%;width:84%;aspect-ratio:1;border:1px solid rgba(255,255,255,.08);border-radius:50%}
 .hero-orbit::after{content:"";position:absolute;inset:10%;border:1px dashed rgba(255,255,255,.08);border-radius:50%}
 .logo-stage{position:relative;min-height:620px;display:flex;align-items:center;justify-content:center}
-.logo-aura{position:absolute;inset:12% 8%;border-radius:38% 62% 58% 42% / 42% 39% 61% 58%;background:radial-gradient(circle at center, rgba(149,201,242,.18), rgba(149,201,242,.05) 40%, transparent 72%);filter:blur(10px)}
-.logo-shell{position:relative;width:min(520px,100%);padding:2rem;border-radius:42px;background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);box-shadow:0 32px 90px rgba(2,10,18,.28);backdrop-filter:blur(10px)}
+.logo-aura{position:absolute;inset:12% 8%;border-radius:38% 62% 58% 42% / 42% 39% 61% 58%;background:radial-gradient(circle at center, rgba(149,201,242,.18), rgba(149,201,242,.05) 40%, transparent 72%);filter:blur(10px);animation:logoAura 8s ease-in-out infinite}
+.logo-shell{position:relative;width:min(520px,100%);padding:2rem;border-radius:42px;background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);box-shadow:0 32px 90px rgba(2,10,18,.28);backdrop-filter:blur(10px);transform-origin:center;animation:logoFloat 7s ease-in-out infinite}
 .logo-shell::before{content:"";position:absolute;inset:14px;border-radius:32px;border:1px solid rgba(255,255,255,.07);pointer-events:none}
 .logo-shell::after{content:"Prestige Medical Tourism";position:absolute;left:2rem;right:2rem;bottom:1.25rem;color:rgba(216,238,252,.76);font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;text-align:center}
-.logo-shell img{position:relative;width:100%;max-width:390px;margin:0 auto 1.8rem;object-fit:contain;filter:drop-shadow(0 22px 42px rgba(149,201,242,.16))}
+.logo-shell img{position:relative;width:100%;max-width:390px;margin:0 auto 1.8rem;object-fit:contain;filter:drop-shadow(0 22px 42px rgba(149,201,242,.16));animation:logoPulse 7s ease-in-out infinite}
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-10px) scale(1.012)}
+}
+@keyframes logoPulse{
+  0%,100%{filter:drop-shadow(0 22px 42px rgba(149,201,242,.16))}
+  50%{filter:drop-shadow(0 28px 60px rgba(149,201,242,.26))}
+}
+@keyframes logoAura{
+  0%,100%{transform:scale(.98);opacity:.78}
+  50%{transform:scale(1.03);opacity:1}
+}
 section{padding:7rem 0}
 .flow-section{position:relative}
 .flow-section::before{content:"";position:absolute;left:50%;top:0;width:min(1100px,86vw);height:100%;transform:translateX(-50%);border-radius:60px;background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));opacity:.65;pointer-events:none}

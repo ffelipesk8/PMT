@@ -54,12 +54,12 @@ h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacin
 .center{text-align:center;max-width:760px;margin:auto}
 .rule{width:86px;height:1px;background:linear-gradient(90deg,var(--accent-strong),transparent);margin-top:1.35rem}
 .center .rule{margin-inline:auto}
-[data-lang]{display:none}
-body.lang-en [data-lang="en"]{display:block}
-body.lang-es [data-lang="es"]{display:block}
-[data-inline]{display:none}
-body.lang-en [data-inline="en"]{display:inline}
-body.lang-es [data-inline="es"]{display:inline}
+[data-lang]{display:none !important}
+body.lang-en [data-lang="en"]{display:block !important}
+body.lang-es [data-lang="es"]{display:block !important}
+[data-inline]{display:none !important}
+body.lang-en [data-inline="en"]{display:inline !important}
+body.lang-es [data-inline="es"]{display:inline !important}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
 .reveal.show{opacity:1;transform:none}
 nav{position:fixed;inset:0 0 auto;z-index:20;transition:.35s ease}
@@ -124,6 +124,9 @@ section{padding:7rem 0}
 .services-grid{position:relative;z-index:1;margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
 .service{padding:2rem 1.8rem;border-radius:34px;background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);transition:transform .3s ease,border-color .3s ease,background .3s ease}
 .service:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.16);background:linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.03))}
+.service.featured{background:linear-gradient(180deg, rgba(149,201,242,.16), rgba(255,255,255,.04) 44%, rgba(255,255,255,.02));border-color:rgba(216,238,252,.2);box-shadow:0 28px 60px rgba(5,14,24,.24)}
+.service.featured h3{font-size:1.95rem}
+.service.featured .service-icon{background:linear-gradient(135deg, rgba(216,238,252,.5), rgba(149,201,242,.34))}
 .service-icon{width:3.1rem;height:3.1rem;border-radius:50%;display:grid;place-items:center;margin-bottom:1rem;color:#fff;background:linear-gradient(135deg, rgba(216,238,252,.34), rgba(149,201,242,.28));border:1px solid rgba(255,255,255,.12)}
 .service h3{font-size:1.7rem}
 .service p{margin-top:.75rem;color:var(--mist-soft);line-height:1.8}
@@ -179,7 +182,6 @@ footer{padding:0 0 2rem}
 .footer-col h4{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:1rem}
 .footer-col a,.footer-copy{color:var(--mist-soft);line-height:1.8;font-size:.88rem}
 .footer-col{display:grid;align-content:start;gap:.35rem}
-.footer-chip{display:inline-flex;margin-top:1rem;padding:.72rem .92rem;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:var(--accent-strong);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;background:rgba(255,255,255,.03)}
 .footer-bottom{margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;gap:1rem;color:rgba(239,246,251,.42);font-size:.74rem}
 @media (max-width:1040px){.hero-layout,.about-layout,.why-layout,.contact-layout,.recovery-layout,.footer-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.journey{grid-template-columns:repeat(2,1fr)}.metrics,.recovery-grid{grid-template-columns:1fr}.journey-step::after{display:none}}
 @media (max-width:720px){.wrap,.nav-shell{width:min(1220px,calc(100% - 1rem))}.nav-pill{display:none}.brand-mark span{display:none}.hero{padding-top:7rem}.soft-card,.service,.journey-step,.recovery-item,.recovery-panel,.contact-card,.scope-shell{padding:1.4rem}.title{font-size:clamp(3rem,14vw,4.8rem)}.services-grid,.journey{grid-template-columns:1fr}.btn-main,.btn-ghost{min-width:100%}.pill-cloud span{width:100%;transform:none !important}.footer-bottom{flex-direction:column;text-align:center}}
@@ -245,10 +247,10 @@ footer{padding:0 0 2rem}
       <p class="copy" data-lang="es">Un portafolio curado de especialidades medicas presentado con claridad, elegancia y un enfoque centrado en el paciente.</p>
     </div>
     <div class="services-grid">
+      <article class="service featured reveal"><div class="service-icon">P</div><h3 data-lang="en">Plastic Surgery</h3><h3 data-lang="es">Cirugia Plastica</h3><p data-lang="en">Private coordination, elegant support, and premium recovery planning for the specialty most requested by international patients.</p><p data-lang="es">Coordinacion privada, soporte elegante y planificacion premium de recuperacion para la especialidad mas buscada por pacientes internacionales.</p><ul data-lang="en"><li>Facelift</li><li>Rhinoplasty</li><li>Body contouring</li></ul><ul data-lang="es"><li>Lifting facial</li><li>Rinoplastia</li><li>Contorno corporal</li></ul></article>
       <article class="service reveal"><div class="service-icon">N</div><h3 data-lang="en">Brain Health</h3><h3 data-lang="es">Salud Cerebral</h3><p data-lang="en">Cognition, focus, neurotechnology, and optimization programs for modern patients.</p><p data-lang="es">Cognicion, enfoque, neurotecnologia y programas de optimizacion para pacientes modernos.</p><ul data-lang="en"><li>Brain mapping</li><li>Cognitive optimization</li><li>Performance support</li></ul><ul data-lang="es"><li>Mapeo cerebral</li><li>Optimizacion cognitiva</li><li>Soporte de rendimiento</li></ul></article>
       <article class="service reveal"><div class="service-icon">R</div><h3 data-lang="en">Regenerative Medicine</h3><h3 data-lang="es">Medicina Regenerativa</h3><p data-lang="en">Longevity, vitality, and restorative therapies communicated with clarity and confidence.</p><p data-lang="es">Longevidad, vitalidad y terapias restaurativas comunicadas con claridad y confianza.</p><ul data-lang="en"><li>Stem cells</li><li>Exosomes</li><li>NAD+</li></ul><ul data-lang="es"><li>Celulas madre</li><li>Exosomas</li><li>NAD+</li></ul></article>
       <article class="service reveal"><div class="service-icon">A</div><h3 data-lang="en">Aesthetic Medicine</h3><h3 data-lang="es">Medicina Estetica</h3><p data-lang="en">Refined aesthetic care with a cleaner and more elevated patient presentation.</p><p data-lang="es">Cuidado estetico refinado con una presentacion de paciente mas limpia y elevada.</p><ul data-lang="en"><li>Facial rejuvenation</li><li>Injectables</li><li>Laser treatments</li></ul><ul data-lang="es"><li>Rejuvenecimiento facial</li><li>Inyectables</li><li>Tratamientos laser</li></ul></article>
-      <article class="service reveal"><div class="service-icon">P</div><h3 data-lang="en">Plastic Surgery</h3><h3 data-lang="es">Cirugia Plastica</h3><p data-lang="en">Private coordination, elegant support, and premium recovery planning.</p><p data-lang="es">Coordinacion privada, soporte elegante y planificacion premium de recuperacion.</p><ul data-lang="en"><li>Facelift</li><li>Rhinoplasty</li><li>Body contouring</li></ul><ul data-lang="es"><li>Lifting facial</li><li>Rinoplastia</li><li>Contorno corporal</li></ul></article>
       <article class="service reveal"><div class="service-icon">D</div><h3 data-lang="en">Dental Aesthetics</h3><h3 data-lang="es">Odontologia Estetica</h3><p data-lang="en">Smile design and oral rehabilitation with a stronger premium feel.</p><p data-lang="es">Diseno de sonrisa y rehabilitacion oral con una sensacion premium mas fuerte.</p><ul data-lang="en"><li>Smile design</li><li>Veneers</li><li>Implants</li></ul><ul data-lang="es"><li>Diseno de sonrisa</li><li>Carillas</li><li>Implantes</li></ul></article>
       <article class="service reveal"><div class="service-icon">+</div><h3 data-lang="en">Additional Pathways</h3><h3 data-lang="es">Rutas Adicionales</h3><p data-lang="en">Fertility, orthopedics, hair restoration, and curated specialty programs.</p><p data-lang="es">Fertilidad, ortopedia, restauracion capilar y programas especializados curados.</p><ul data-lang="en"><li>Fertility</li><li>Hair restoration</li><li>Orthopedics</li></ul><ul data-lang="es"><li>Fertilidad</li><li>Restauracion capilar</li><li>Ortopedia</li></ul></article>
     </div>
@@ -317,15 +319,15 @@ footer{padding:0 0 2rem}
 </section>
 <section id="contact">
   <div class="wrap contact-layout">
-    <div class="soft-card reveal"><p class="kicker"><span data-inline="en">Start Today</span><span data-inline="es">Empieza Hoy</span></p><h2 class="title" data-lang="en">Start your <em>medical journey</em> with confidence</h2><h2 class="title" data-lang="es">Comienza tu <em>viaje medico</em> con confianza</h2><div class="rule"></div><p class="copy" data-lang="en">Contact the PMT concierge team for a confidential consultation and a personalized medical route designed around care, travel, and recovery.</p><p class="copy" data-lang="es">Contacta al equipo concierge de PMT para una consulta confidencial y una ruta medica personalizada disenada alrededor de cuidado, viaje y recuperacion.</p><div class="contact-actions"><a class="btn-main" href="https://wa.me/573000000000" target="_blank" rel="noreferrer"><span data-inline="en">WhatsApp Us</span><span data-inline="es">Escribenos por WhatsApp</span></a><a class="btn-ghost" href="mailto:info@prestigemedicaltourism.com"><span data-inline="en">Send Email</span><span data-inline="es">Enviar Correo</span></a></div></div>
-    <div class="contact-stack reveal"><div class="contact-card"><strong>Email</strong><p>info@prestigemedicaltourism.com</p></div><div class="contact-card"><strong>Web</strong><p>prestigemedicaltourism.com</p></div><div class="contact-card"><strong><span data-inline="en">Location</span><span data-inline="es">Ubicacion</span></strong><p>Medellin, Colombia</p></div></div>
+    <div class="soft-card reveal"><p class="kicker"><span data-inline="en">Start Today</span><span data-inline="es">Empieza Hoy</span></p><h2 class="title" data-lang="en">Start your <em>medical journey</em> with confidence</h2><h2 class="title" data-lang="es">Comienza tu <em>viaje medico</em> con confianza</h2><div class="rule"></div><p class="copy" data-lang="en">Contact the PMT concierge team for a confidential consultation and a personalized medical route designed around care, travel, and recovery.</p><p class="copy" data-lang="es">Contacta al equipo concierge de PMT para una consulta confidencial y una ruta medica personalizada disenada alrededor de cuidado, viaje y recuperacion.</p><div class="contact-actions"><a class="btn-main" href="https://wa.me/573205619640" target="_blank" rel="noreferrer"><span data-inline="en">WhatsApp Us</span><span data-inline="es">Escribenos por WhatsApp</span></a><a class="btn-ghost" href="mailto:info@prestigemedicaltourism.com"><span data-inline="en">Send Email</span><span data-inline="es">Enviar Correo</span></a></div></div>
+    <div class="contact-stack reveal"><div class="contact-card"><strong>WhatsApp</strong><p>+57 320 5619640</p></div><div class="contact-card"><strong>Email</strong><p>info@prestigemedicaltourism.com</p></div><div class="contact-card"><strong>Web</strong><p>prestigemedicaltourism.com</p></div><div class="contact-card"><strong><span data-inline="en">Location</span><span data-inline="es">Ubicacion</span></strong><p>Medellin, Colombia</p></div></div>
   </div>
 </section>
 <footer>
   <div class="footer-shell">
     <div class="footer-grid">
-      <div><div class="footer-brand"><img src="assets/logo-pmt-cropped.png" alt="PMT logo"><div><b>PMT</b><p class="footer-copy">Prestige Medical Tourism</p></div></div><p class="footer-copy" style="margin-top:1rem" data-lang="en">A premium medical tourism brand built around international trust, elite coordination, and a smoother patient experience in Medellin.</p><p class="footer-copy" style="margin-top:1rem" data-lang="es">Una marca premium de turismo medico construida alrededor de confianza internacional, coordinacion de elite y una experiencia mas fluida en Medellin.</p><div class="footer-chip"><span data-inline="en">Brand-led Experience</span><span data-inline="es">Experiencia Guiada por Marca</span></div></div>
-      <div class="footer-col"><h4 data-lang="en">Services</h4><h4 data-lang="es">Servicios</h4><a href="#services">Brain Health</a><a href="#services">Regenerative Medicine</a><a href="#services">Plastic Surgery</a><a href="#services">Dental Aesthetics</a></div>
+      <div><div class="footer-brand"><img src="assets/logo-pmt-cropped.png" alt="PMT logo"><div><b>PMT</b><p class="footer-copy">Prestige Medical Tourism</p></div></div><p class="footer-copy" style="margin-top:1rem" data-lang="en">A premium medical tourism brand built around international trust, elite coordination, and a smoother patient experience in Medellin.</p><p class="footer-copy" style="margin-top:1rem" data-lang="es">Una marca premium de turismo medico construida alrededor de confianza internacional, coordinacion de elite y una experiencia mas fluida en Medellin.</p></div>
+      <div class="footer-col"><h4 data-lang="en">Services</h4><h4 data-lang="es">Servicios</h4><a href="#services">Plastic Surgery</a><a href="#services">Brain Health</a><a href="#services">Regenerative Medicine</a><a href="#services">Dental Aesthetics</a></div>
       <div class="footer-col"><h4 data-lang="en">Contact</h4><h4 data-lang="es">Contacto</h4><a href="mailto:info@prestigemedicaltourism.com">info@prestigemedicaltourism.com</a><a href="#contact">Medellin, Colombia</a><a href="#recovery">Recovery Program</a></div>
     </div>
     <div class="footer-bottom"><span>Copyright 2026 PMT Prestige Medical Tourism</span><span data-lang="en">All rights reserved | Medellin, Colombia</span><span data-lang="es">Todos los derechos reservados | Medellin, Colombia</span></div>

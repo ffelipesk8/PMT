@@ -166,17 +166,13 @@ section{padding:7rem 0}
 .scope-copy{max-width:560px;margin-top:1.05rem;color:var(--mist-soft);line-height:1.92}
 .scope-lead{margin-top:1.4rem;display:inline-flex;align-items:center;gap:.7rem;color:rgba(216,238,252,.82);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase}
 .scope-lead::before{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--accent-strong),transparent)}
-.scope-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:1rem;align-items:stretch}
-.scope-featured{position:relative;min-height:100%;padding:1.8rem 1.8rem 1.7rem;border-radius:30px;background:radial-gradient(circle at top right, rgba(149,201,242,.18), transparent 42%), linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);overflow:hidden}
-.scope-featured::after{content:"";position:absolute;inset:auto -8% -28% auto;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle, rgba(149,201,242,.16), transparent 68%);pointer-events:none}
-.scope-featured strong,.scope-item strong{display:block;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(216,238,252,.56)}
-.scope-featured h3{margin-top:.9rem;font-family:"Cormorant Garamond",serif;font-size:3rem;line-height:.94;color:#f7fbff}
-.scope-featured p{max-width:360px;margin-top:1rem;color:var(--mist-soft);line-height:1.84}
-.scope-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.scope-item{position:relative;padding:1.2rem 1.2rem 1.15rem 1.25rem;border-radius:24px;background:linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.08);min-height:118px;overflow:hidden}
+.scope-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:stretch}
+.scope-item strong{display:block;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(216,238,252,.56)}
+.scope-item{position:relative;padding:1.3rem 1.25rem 1.2rem 1.3rem;border-radius:24px;background:linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.08);min-height:178px;overflow:hidden}
+.scope-item.scope-priority{background:radial-gradient(circle at top right, rgba(149,201,242,.16), transparent 46%), linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03));border-color:rgba(255,255,255,.12)}
 .scope-item::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,var(--accent-strong),transparent)}
-.scope-item span{display:block;margin-top:.72rem;font-family:"Cormorant Garamond",serif;font-size:1.5rem;line-height:1;color:#f4f8fc}
-.scope-item small{display:block;margin-top:.55rem;color:rgba(231,241,248,.62);font-size:.8rem;line-height:1.55}
+.scope-item span{display:block;margin-top:.72rem;font-family:"Cormorant Garamond",serif;font-size:1.62rem;line-height:1;color:#f4f8fc}
+.scope-item small{display:block;margin-top:.65rem;color:rgba(231,241,248,.62);font-size:.82rem;line-height:1.6}
 .contact-layout{align-items:center}
 .contact-stack{display:grid;gap:1rem}
 .contact-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.7rem}
@@ -193,7 +189,7 @@ footer{padding:0 0 2rem}
 .footer-col a,.footer-copy{color:var(--mist-soft);line-height:1.8;font-size:.88rem}
 .footer-col{display:grid;align-content:start;gap:.35rem}
 .footer-bottom{margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;gap:1rem;color:rgba(239,246,251,.42);font-size:.74rem}
-@media (max-width:1040px){.hero-layout,.about-layout,.why-layout,.contact-layout,.recovery-layout,.scope-shell,.footer-grid,.scope-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.journey{grid-template-columns:repeat(2,1fr)}.metrics,.recovery-grid,.scope-stack{grid-template-columns:1fr}.journey-step::after{display:none}.scope-featured h3{font-size:2.5rem}}
+@media (max-width:1040px){.hero-layout,.about-layout,.why-layout,.contact-layout,.recovery-layout,.scope-shell,.footer-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.journey{grid-template-columns:repeat(2,1fr)}.metrics,.recovery-grid{grid-template-columns:1fr}.scope-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-step::after{display:none}}
 @media (max-width:720px){.wrap,.nav-shell{width:min(1220px,calc(100% - 1rem))}.nav-pill{display:none}.brand-mark span{display:none}.hero{padding-top:7rem}.soft-card,.service,.journey-step,.recovery-item,.recovery-panel,.contact-card,.scope-shell{padding:1.4rem}.title{font-size:clamp(3rem,14vw,4.8rem)}.services-grid,.journey,.scope-grid{grid-template-columns:1fr}.btn-main,.btn-ghost{min-width:100%}.scope-copy-wrap{padding-right:0}.footer-bottom{flex-direction:column;text-align:center}}
 </style>
 </head>
@@ -340,23 +336,16 @@ footer{padding:0 0 2rem}
         </div>
       </div>
       <div class="scope-grid reveal">
-        <article class="scope-featured">
-          <strong>01</strong>
-          <h3>Plastic Surgery</h3>
-          <p data-lang="en">The category most international patients ask for first, supported by discreet coordination, premium recovery planning, and a more polished travel experience from arrival to return.</p>
-          <p data-lang="es">La categoria que mas buscan los pacientes internacionales, respaldada por coordinacion discreta, planeacion de recuperacion premium y una experiencia de viaje mucho mas cuidada de principio a fin.</p>
-        </article>
-        <div class="scope-stack">
-          <article class="scope-item"><strong>02</strong><span>Stem Cell Therapy</span><small data-lang="en">Advanced regenerative options for patients seeking elevated wellness outcomes.</small><small data-lang="es">Opciones regenerativas avanzadas para pacientes que buscan resultados de bienestar superiores.</small></article>
-          <article class="scope-item"><strong>03</strong><span>Dental Veneers</span><small data-lang="en">Aesthetic smile design paired with a smoother international care process.</small><small data-lang="es">Diseno de sonrisa estetico acompaniado por un proceso internacional mas fluido.</small></article>
-          <article class="scope-item"><strong>04</strong><span>Brain Mapping</span><small data-lang="en">Precision-oriented neurological support presented in a modern clinical context.</small><small data-lang="es">Soporte neurologico de precision presentado dentro de un contexto clinico moderno.</small></article>
-          <article class="scope-item"><strong>05</strong><span>IVF Fertility</span><small data-lang="en">Sensitive fertility journeys coordinated with clarity, privacy, and trust.</small><small data-lang="es">Procesos de fertilidad coordinados con claridad, privacidad y confianza.</small></article>
-          <article class="scope-item"><strong>06</strong><span>Hair Restoration</span><small data-lang="en">Image-focused treatments delivered with elevated patient comfort and planning.</small><small data-lang="es">Tratamientos orientados a imagen personal con mayor comodidad y mejor planeacion.</small></article>
-          <article class="scope-item"><strong>07</strong><span>NAD+ Therapy</span><small data-lang="en">High-end wellness support for recovery, energy, and restorative performance.</small><small data-lang="es">Soporte wellness de alto nivel para recuperacion, energia y rendimiento restaurativo.</small></article>
-          <article class="scope-item"><strong>08</strong><span>Orthopedics</span><small data-lang="en">Specialized musculoskeletal care supported by recovery-forward coordination.</small><small data-lang="es">Cuidado musculoesqueletico especializado respaldado por una coordinacion enfocada en recuperacion.</small></article>
-          <article class="scope-item"><strong>09</strong><span>Cryotherapy</span><small data-lang="en">Modern cold-based support that complements recovery and wellness protocols.</small><small data-lang="es">Soporte moderno basado en frio que complementa protocolos de recuperacion y bienestar.</small></article>
-          <article class="scope-item"><strong>10</strong><span data-lang="en">Recovery Programs</span><span data-lang="es">Recovery Programs</span><small data-lang="en">Integrated therapies that complete the trip with more comfort and continuity.</small><small data-lang="es">Terapias integradas que completan el viaje con mayor comodidad y continuidad.</small></article>
-        </div>
+        <article class="scope-item scope-priority"><strong>01</strong><span>Plastic Surgery</span><small data-lang="en">High-demand aesthetic care supported by refined coordination, privacy, and premium recovery planning.</small><small data-lang="es">Cuidado estetico de alta demanda respaldado por coordinacion refinada, privacidad y recuperacion premium.</small></article>
+        <article class="scope-item"><strong>02</strong><span>Stem Cell Therapy</span><small data-lang="en">Advanced regenerative options for patients seeking elevated wellness outcomes.</small><small data-lang="es">Opciones regenerativas avanzadas para pacientes que buscan resultados de bienestar superiores.</small></article>
+        <article class="scope-item"><strong>03</strong><span>Dental Veneers</span><small data-lang="en">Aesthetic smile design paired with a smoother international care process.</small><small data-lang="es">Diseno de sonrisa estetico acompaniado por un proceso internacional mas fluido.</small></article>
+        <article class="scope-item"><strong>04</strong><span>Brain Mapping</span><small data-lang="en">Precision-oriented neurological support presented in a modern clinical context.</small><small data-lang="es">Soporte neurologico de precision presentado dentro de un contexto clinico moderno.</small></article>
+        <article class="scope-item"><strong>05</strong><span>IVF Fertility</span><small data-lang="en">Sensitive fertility journeys coordinated with clarity, privacy, and trust.</small><small data-lang="es">Procesos de fertilidad coordinados con claridad, privacidad y confianza.</small></article>
+        <article class="scope-item"><strong>06</strong><span>Hair Restoration</span><small data-lang="en">Image-focused treatments delivered with elevated patient comfort and planning.</small><small data-lang="es">Tratamientos orientados a imagen personal con mayor comodidad y mejor planeacion.</small></article>
+        <article class="scope-item"><strong>07</strong><span>NAD+ Therapy</span><small data-lang="en">High-end wellness support for recovery, energy, and restorative performance.</small><small data-lang="es">Soporte wellness de alto nivel para recuperacion, energia y rendimiento restaurativo.</small></article>
+        <article class="scope-item"><strong>08</strong><span>Orthopedics</span><small data-lang="en">Specialized musculoskeletal care supported by recovery-forward coordination.</small><small data-lang="es">Cuidado musculoesqueletico especializado respaldado por una coordinacion enfocada en recuperacion.</small></article>
+        <article class="scope-item"><strong>09</strong><span>Cryotherapy</span><small data-lang="en">Modern cold-based support that complements recovery and wellness protocols.</small><small data-lang="es">Soporte moderno basado en frio que complementa protocolos de recuperacion y bienestar.</small></article>
+        <article class="scope-item"><strong>10</strong><span data-lang="en">Recovery Programs</span><span data-lang="es">Programas de Recuperacion</span><small data-lang="en">Integrated therapies that complete the trip with more comfort and continuity.</small><small data-lang="es">Terapias integradas que completan el viaje con mayor comodidad y continuidad.</small></article>
       </div>
     </div>
   </div>

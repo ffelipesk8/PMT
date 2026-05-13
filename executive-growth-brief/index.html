@@ -144,6 +144,22 @@ nav.scrolled{background:rgba(7,17,27,.74);backdrop-filter:blur(18px);border-bott
 .budget-card.featured{background:linear-gradient(180deg, rgba(149,201,242,.18), rgba(255,255,255,.04) 48%, rgba(255,255,255,.02));border-color:rgba(216,238,252,.18)}
 .budget-price{display:block;margin-top:.9rem;font-family:"Cormorant Garamond",serif;font-size:3.1rem;line-height:1;color:#fff}
 .budget-note{margin-top:.85rem;color:rgba(237,245,251,.58);line-height:1.75}
+.budget-detail-shell{margin-top:2rem;display:grid;gap:1rem}
+.cost-table{margin-top:2.6rem;display:grid;gap:1rem}
+.cost-card{padding:2rem 1.6rem;border-radius:32px;background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08)}
+.cost-card.featured{background:linear-gradient(180deg, rgba(149,201,242,.15), rgba(255,255,255,.04) 42%, rgba(255,255,255,.02));border-color:rgba(216,238,252,.18)}
+.cost-card h3{font-size:2rem}
+.cost-card p{margin-top:.8rem;color:var(--mist-soft);line-height:1.82}
+.line-items{margin-top:1.2rem;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.line-item{display:grid;grid-template-columns:1.2fr .7fr .45fr;gap:1rem;padding:1rem 1.1rem;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06)}
+.line-item:first-child{border-top:none}
+.line-item.head{background:rgba(255,255,255,.07);color:#fff;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
+.line-item span,.line-item b{color:var(--mist-soft);line-height:1.6}
+.line-item.head span{color:rgba(216,238,252,.72)}
+.task-stack{margin-top:1.3rem;display:grid;gap:.8rem}
+.task-block{padding:1rem 1.1rem;border-radius:22px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+.task-block strong{display:block;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(216,238,252,.74)}
+.task-block p{margin-top:.55rem;color:var(--mist-soft);line-height:1.75}
 .ops-grid{margin-top:2.5rem;display:grid;grid-template-columns:1.15fr .85fr;gap:1rem}
 .score-shell{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2.5rem}
 .cta-shell{padding:3rem;border-radius:40px;background:radial-gradient(circle at top right, rgba(149,201,242,.18), transparent 32%), linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:1.4rem;align-items:center}
@@ -152,7 +168,7 @@ nav.scrolled{background:rgba(7,17,27,.74);backdrop-filter:blur(18px);border-bott
 footer{padding:0 0 2rem}
 .footer-shell{width:var(--wrap);margin:auto;padding:2rem 0 0;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:1rem;color:rgba(237,245,251,.48);font-size:.76rem}
 @media (max-width:1120px){.hero-grid,.thesis-shell,.ops-grid,.cta-shell,.grid-two,.grid-four,.score-shell,.stat-grid,.budget-grid,.roadmap{grid-template-columns:1fr}.proposal-stage{min-height:auto}}
-@media (max-width:720px){.wrap,.nav-shell{width:min(1220px,calc(100% - 1rem))}.hero{padding-top:7rem}.panel,.proposal-card,.roadmap-card,.channel-card,.ops-card,.budget-card,.score-card,.cta-shell,.thesis-quote,.stat-card{padding:1.4rem}.title{font-size:clamp(3rem,14vw,5rem)}.btn-main,.btn-ghost{min-width:100%}.nav-link{display:none}.brand-mark span{display:none}.proposal-grid{grid-template-columns:1fr}.cta-shell h2{font-size:2.3rem}.footer-shell{flex-direction:column;text-align:center}}
+@media (max-width:720px){.wrap,.nav-shell{width:min(1220px,calc(100% - 1rem))}.hero{padding-top:7rem}.panel,.proposal-card,.roadmap-card,.channel-card,.ops-card,.budget-card,.score-card,.cta-shell,.thesis-quote,.stat-card,.cost-card{padding:1.4rem}.title{font-size:clamp(3rem,14vw,5rem)}.btn-main,.btn-ghost{min-width:100%}.nav-link{display:none}.brand-mark span{display:none}.proposal-grid{grid-template-columns:1fr}.cta-shell h2{font-size:2.3rem}.footer-shell{flex-direction:column;text-align:center}.line-item{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="lang-en">
@@ -426,6 +442,73 @@ footer{padding:0 0 2rem}
           <li data-lang="en">Stronger reporting, segmentation, and executive oversight.</li>
           <li data-lang="es">Mayor reporting, segmentacion y supervision ejecutiva.</li>
         </ul>
+      </article>
+    </div>
+    <div class="cost-table">
+      <article class="cost-card reveal">
+        <strong><span data-inline="en">Scenario 1 Detail</span><span data-inline="es">Detalle Escenario 1</span></strong>
+        <h3 data-lang="en">Validation Build: tasks and cost logic</h3>
+        <h3 data-lang="es">Construccion de Validacion: tareas y logica de costo</h3>
+        <p data-lang="en">This level is designed to validate demand, install measurement, and create the first high-conversion sales assets without building a full marketing department.</p>
+        <p data-lang="es">Este nivel esta disenado para validar demanda, instalar medicion y crear los primeros activos comerciales de alta conversion sin construir todavia un departamento completo de marketing.</p>
+        <div class="line-items">
+          <div class="line-item head"><span><span data-inline="en">Workstream</span><span data-inline="es">Frente</span></span><span><span data-inline="en">Monthly Range</span><span data-inline="es">Rango Mensual</span></span><span>%</span></div>
+          <div class="line-item"><span data-lang="en">Google Ads lean testing by specialty and keyword cluster</span><span data-lang="es">Testing lean de Google Ads por especialidad y cluster de keywords</span><b>USD 500-900</b><b>30%</b></div>
+          <div class="line-item"><span data-lang="en">Meta awareness + WhatsApp message testing</span><span data-lang="es">Testing de Meta awareness + mensajes a WhatsApp</span><b>USD 250-500</b><b>15%</b></div>
+          <div class="line-item"><span data-lang="en">Core landing setup and conversion copy</span><span data-lang="es">Setup de landings principales y copy de conversion</span><b>USD 200-450</b><b>15%</b></div>
+          <div class="line-item"><span data-lang="en">Content creation: static posts, branded graphics, short-form edits</span><span data-lang="es">Creacion de contenido: piezas graficas, posts estaticos y edicion short-form</span><b>USD 250-500</b><b>15%</b></div>
+          <div class="line-item"><span data-lang="en">Video and image production starter pack</span><span data-lang="es">Paquete inicial de produccion de imagenes y videos</span><b>USD 150-350</b><b>10%</b></div>
+          <div class="line-item"><span data-lang="en">Part-time growth, analytics, and reporting support</span><span data-lang="es">Soporte part-time de growth, analitica y reporting</span><b>USD 250-450</b><b>15%</b></div>
+        </div>
+        <div class="task-stack">
+          <div class="task-block"><strong>Google + Meta</strong><p data-lang="en">Research keyword intent, structure 2-4 lean search campaigns, define negative keywords, configure click-to-WhatsApp tests, and compare Spanish-vs-English response quality.</p><p data-lang="es">Investigar intencion de keywords, estructurar 2-4 campanas lean de search, definir negativas, configurar tests de click-to-WhatsApp y comparar calidad de respuesta entre ingles y espanol.</p></div>
+          <div class="task-block"><strong>Landing Assets</strong><p data-lang="en">Create the first two conversion routes: plastic surgery and regenerative medicine, with form logic, CTA hierarchy, trust messaging, and bilingual copy.</p><p data-lang="es">Crear las dos primeras rutas de conversion: cirugia plastica y medicina regenerativa, con formularios, jerarquia de CTA, mensajes de confianza y copy bilingue.</p></div>
+          <div class="task-block"><strong>Content</strong><p data-lang="en">Produce 8-12 static pieces, 4-6 short videos or motion edits, and a first trust deck adapted for social and WhatsApp follow-up.</p><p data-lang="es">Producir 8-12 piezas estaticas, 4-6 videos cortos o motion edits y un primer deck de confianza adaptable a social y seguimiento por WhatsApp.</p></div>
+        </div>
+      </article>
+
+      <article class="cost-card featured reveal">
+        <strong><span data-inline="en">Scenario 2 Detail</span><span data-inline="es">Detalle Escenario 2</span></strong>
+        <h3 data-lang="en">Core Growth Engine: tasks and cost logic</h3>
+        <h3 data-lang="es">Motor Central de Crecimiento: tareas y logica de costo</h3>
+        <p data-lang="en">This is the recommended level because it funds both demand generation and conversion infrastructure with enough consistency to learn, optimize, and scale.</p>
+        <p data-lang="es">Este es el nivel recomendado porque financia tanto generacion de demanda como infraestructura de conversion con suficiente consistencia para aprender, optimizar y escalar.</p>
+        <div class="line-items">
+          <div class="line-item head"><span><span data-inline="en">Workstream</span><span data-inline="es">Frente</span></span><span><span data-inline="en">Monthly Range</span><span data-inline="es">Rango Mensual</span></span><span>%</span></div>
+          <div class="line-item"><span data-lang="en">Google Ads multi-campaign engine by specialty, country, and language</span><span data-lang="es">Motor multicanal de Google Ads por especialidad, pais e idioma</span><b>USD 1,100-1,900</b><b>32%</b></div>
+          <div class="line-item"><span data-lang="en">Meta Ads awareness, retargeting, and WhatsApp funnels</span><span data-lang="es">Meta Ads para awareness, retargeting y funnels a WhatsApp</span><b>USD 500-900</b><b>15%</b></div>
+          <div class="line-item"><span data-lang="en">SEO, content strategy, and blog production</span><span data-lang="es">SEO, estrategia de contenido y produccion de blog</span><b>USD 450-850</b><b>14%</b></div>
+          <div class="line-item"><span data-lang="en">Content creation: design system, social creatives, carousels, short-form scripts</span><span data-lang="es">Creacion de contenido: sistema visual, piezas sociales, carruseles y guiones short-form</span><b>USD 450-800</b><b>14%</b></div>
+          <div class="line-item"><span data-lang="en">Image and video production recurring pack</span><span data-lang="es">Paquete recurrente de produccion de imagenes y videos</span><b>USD 400-750</b><b>12%</b></div>
+          <div class="line-item"><span data-lang="en">Senior strategy, bilingual copy, automation, and reporting</span><span data-lang="es">Estrategia senior, copy bilingue, automatizacion y reporting</span><b>USD 500-900</b><b>13%</b></div>
+        </div>
+        <div class="task-stack">
+          <div class="task-block"><strong>Paid Media</strong><p data-lang="en">Build segmented campaigns by procedure, country, language, and intent level; optimize search terms, ads, and landing behavior weekly; and activate retargeting audiences with compliance-safe creative.</p><p data-lang="es">Construir campanas segmentadas por procedimiento, pais, idioma y nivel de intencion; optimizar terminos, anuncios y comportamiento de landing semanalmente; y activar retargeting con creativos seguros a nivel de compliance.</p></div>
+          <div class="task-block"><strong>SEO + Content</strong><p data-lang="en">Publish 2-4 SEO articles monthly, maintain procedure pages, create FAQ and comparison content, and shape educational scripts for brand authority.</p><p data-lang="es">Publicar 2-4 articulos SEO mensuales, mantener paginas de procedimiento, crear FAQ y comparativos, y desarrollar guiones educativos para construir autoridad.</p></div>
+          <div class="task-block"><strong>Creative Production</strong><p data-lang="en">Monthly creation of 12-20 graphics, 6-10 reels/short edits, visual templates, thumbnails, branded decks, and message variations for ads, social, and nurturing.</p><p data-lang="es">Creacion mensual de 12-20 piezas graficas, 6-10 reels o short edits, templates visuales, thumbnails, decks de marca y variaciones de mensajes para ads, social y nurturing.</p></div>
+        </div>
+      </article>
+
+      <article class="cost-card reveal">
+        <strong><span data-inline="en">Scenario 3 Detail</span><span data-inline="es">Detalle Escenario 3</span></strong>
+        <h3 data-lang="en">Authority Scale: tasks and cost logic</h3>
+        <h3 data-lang="es">Escala de Autoridad: tareas y logica de costo</h3>
+        <p data-lang="en">This level treats PMT as a premium brand launch system, not just a lead-gen setup. It funds authority, content depth, executive reporting, and faster market penetration.</p>
+        <p data-lang="es">Este nivel trata a PMT como un sistema de lanzamiento de marca premium, no solo como un setup de leads. Financia autoridad, profundidad de contenido, reporting ejecutivo y mayor velocidad de penetracion.</p>
+        <div class="line-items">
+          <div class="line-item head"><span><span data-inline="en">Workstream</span><span data-inline="es">Frente</span></span><span><span data-inline="en">Monthly Range</span><span data-inline="es">Rango Mensual</span></span><span>%</span></div>
+          <div class="line-item"><span data-lang="en">Advanced paid media across Google, Meta, retargeting, CRO testing</span><span data-lang="es">Paid media avanzado en Google, Meta, retargeting y testing CRO</span><b>USD 3,000-4,000</b><b>33%</b></div>
+          <div class="line-item"><span data-lang="en">SEO authority program, localization, and editorial production</span><span data-lang="es">Programa de autoridad SEO, localizacion y produccion editorial</span><b>USD 900-1,400</b><b>12%</b></div>
+          <div class="line-item"><span data-lang="en">Premium content creation: campaign concepts, social creative system, brand storytelling</span><span data-lang="es">Creacion premium de contenido: conceptos de campana, sistema creativo y storytelling</span><b>USD 1,100-1,700</b><b>14%</b></div>
+          <div class="line-item"><span data-lang="en">Photo and video production: shoots, reels, physician clips, recovery visuals</span><span data-lang="es">Produccion de foto y video: shootings, reels, clips medicos y visuales de recovery</span><b>USD 1,200-2,000</b><b>17%</b></div>
+          <div class="line-item"><span data-lang="en">PR, partnerships, and selective influencer/authority distribution</span><span data-lang="es">PR, alianzas y distribucion selectiva con perfiles de autoridad</span><b>USD 700-1,200</b><b>10%</b></div>
+          <div class="line-item"><span data-lang="en">Senior leadership, analytics, automation, dashboards, executive supervision</span><span data-lang="es">Direccion senior, analitica, automatizacion, dashboards y supervision ejecutiva</span><b>USD 1,100-1,800</b><b>14%</b></div>
+        </div>
+        <div class="task-stack">
+          <div class="task-block"><strong>Authority Engine</strong><p data-lang="en">Launch premium campaign concepts, procedure-led growth sprints, multilingual editorial calendars, and differentiated brand narratives for each high-value market.</p><p data-lang="es">Lanzar conceptos premium de campana, sprints de crecimiento por procedimiento, calendarios editoriales multilingues y narrativas diferenciadas para cada mercado de alto valor.</p></div>
+          <div class="task-block"><strong>Production Layer</strong><p data-lang="en">Run professional content days, physician interviews, destination footage, patient journey visuals, ad variations, YouTube assets, and high-end short-form storytelling.</p><p data-lang="es">Ejecutar jornadas profesionales de contenido, entrevistas con especialistas, footage de destino, visuales del patient journey, variaciones para ads, activos para YouTube y storytelling short-form de alto nivel.</p></div>
+          <div class="task-block"><strong>Executive Optimization</strong><p data-lang="en">Add dashboarding, funnel diagnostics, conversion heatmaps, CAC by procedure, and executive budget reallocation decisions month by month.</p><p data-lang="es">Agregar dashboards, diagnostico de funnel, mapas de conversion, CAC por procedimiento y decisiones ejecutivas de reasignacion presupuestal mes a mes.</p></div>
+        </div>
       </article>
     </div>
   </div>

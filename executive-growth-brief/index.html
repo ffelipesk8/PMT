@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PMT | Executive Growth Brief</title>
+<meta name="description" content="Confidential executive growth brief for Prestige Medical Tourism.">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#07111b;
+  --ink-soft:#0d1824;
+  --mist:#edf5fb;
+  --mist-soft:rgba(237,245,251,.74);
+  --line:rgba(255,255,255,.12);
+  --line-soft:rgba(255,255,255,.08);
+  --accent:#95c9f2;
+  --accent-strong:#d8eefc;
+  --accent-deep:#5ca9df;
+  --success:#91dfc3;
+  --warm:#f4d3b0;
+  --shadow:0 30px 80px rgba(2,10,18,.34);
+  --panel:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+  --panel-strong:linear-gradient(180deg, rgba(149,201,242,.18), rgba(255,255,255,.05) 45%, rgba(255,255,255,.02));
+  --wrap:min(1220px,calc(100% - 2rem));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Manrope",sans-serif;
+  color:var(--mist);
+  background:
+    radial-gradient(circle at top left,rgba(149,201,242,.18),transparent 28%),
+    radial-gradient(circle at top right,rgba(216,238,252,.10),transparent 20%),
+    linear-gradient(180deg,#07111b 0%,#0b1722 36%,#09121b 100%);
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacing:.03em}
+.wrap{width:var(--wrap);margin:auto}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+[data-lang]{display:none !important}
+body.lang-en [data-lang="en"]{display:block !important}
+body.lang-es [data-lang="es"]{display:block !important}
+[data-inline]{display:none !important}
+body.lang-en [data-inline="en"]{display:inline !important}
+body.lang-es [data-inline="es"]{display:inline !important}
+.eyebrow{display:inline-flex;align-items:center;gap:.7rem;padding:.6rem .95rem;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--accent-strong);font-size:.66rem;letter-spacing:.25em;text-transform:uppercase}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 0 8px rgba(145,223,195,.08)}
+.kicker{font-size:.67rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent-strong)}
+.title{font-size:clamp(3.2rem,6vw,6rem);line-height:.92;margin-top:1rem}
+.title em{font-style:italic;color:var(--warm)}
+.copy{margin-top:1rem;color:var(--mist-soft);line-height:1.9;font-size:1rem}
+.rule{width:96px;height:1px;background:linear-gradient(90deg,var(--accent-strong),transparent);margin-top:1.3rem}
+section{padding:6.5rem 0;position:relative}
+nav{position:fixed;inset:0 0 auto;z-index:30;transition:.35s ease}
+nav.scrolled{background:rgba(7,17,27,.74);backdrop-filter:blur(18px);border-bottom:1px solid var(--line-soft)}
+.nav-shell{width:var(--wrap);margin:auto;padding:1rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand{display:flex;align-items:center;gap:.9rem}
+.brand img{width:62px;height:48px;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(149,201,242,.18))}
+.brand-mark{display:flex;flex-direction:column;gap:.14rem}
+.brand-mark b{font-size:1rem;letter-spacing:.28em;text-transform:uppercase;color:#fff}
+.brand-mark span{font-size:.54rem;letter-spacing:.36em;text-transform:uppercase;color:var(--mist-soft)}
+.nav-actions{display:flex;align-items:center;gap:.8rem}
+.nav-link,.lang button,.btn-main,.btn-ghost{font-size:.64rem;letter-spacing:.23em;text-transform:uppercase;font-family:inherit}
+.nav-link,.lang button,.btn-ghost{border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.nav-link{padding:.85rem 1rem;color:var(--accent-strong)}
+.lang{display:flex;gap:.42rem}
+.lang button{padding:.72rem .88rem;color:var(--mist-soft);cursor:pointer}
+.lang button.active{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.18)}
+.hero{min-height:100vh;padding:8.5rem 0 4rem;display:flex;align-items:center;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:999px;pointer-events:none}
+.hero::before{width:920px;height:920px;top:-380px;right:-220px;background:radial-gradient(circle, rgba(149,201,242,.18), transparent 62%)}
+.hero::after{width:680px;height:680px;left:-180px;bottom:-220px;background:radial-gradient(circle, rgba(244,211,176,.10), transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:2rem;align-items:center}
+.hero-copy{position:relative;z-index:1;padding-top:1rem}
+.hero-copy .copy{max-width:700px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.btn-main,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;min-width:220px;padding:1rem 1.35rem;border-radius:999px}
+.btn-main{background:linear-gradient(135deg,#f7fbff,#cfe8fb 56%,#b9dbf6);color:#0b1826;font-weight:800;box-shadow:0 18px 40px rgba(149,201,242,.2)}
+.btn-ghost{color:var(--accent-strong)}
+.hero-facts{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:2rem}
+.hero-facts span{color:var(--mist-soft);font-size:.74rem;letter-spacing:.08em}
+.hero-facts span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:.65rem;vertical-align:middle}
+.proposal-stage{position:relative;min-height:640px;display:flex;align-items:center;justify-content:center}
+.proposal-aura{position:absolute;inset:10% 8%;border-radius:38% 62% 58% 42% / 42% 39% 61% 58%;background:radial-gradient(circle at center, rgba(149,201,242,.18), rgba(149,201,242,.05) 42%, transparent 72%);filter:blur(14px);animation:floatAura 8s ease-in-out infinite}
+.proposal-card{position:relative;width:min(520px,100%);padding:2.2rem;border-radius:40px;background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow);backdrop-filter:blur(12px);overflow:hidden}
+.proposal-card::before{content:"";position:absolute;inset:14px;border-radius:28px;border:1px solid rgba(255,255,255,.08);pointer-events:none}
+.proposal-top{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
+.proposal-badge{padding:.6rem .8rem;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--accent-strong);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase}
+.proposal-card img{width:106px;object-fit:contain;filter:drop-shadow(0 14px 28px rgba(149,201,242,.18))}
+.proposal-card h3{font-size:2.4rem;margin-top:2rem}
+.proposal-card p{margin-top:.8rem;color:var(--mist-soft);line-height:1.85}
+.proposal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.8rem}
+.proposal-metric{padding:1rem 1rem 1.1rem;border-radius:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.proposal-metric strong{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(216,238,252,.62)}
+.proposal-metric span{display:block;margin-top:.55rem;font-family:"Cormorant Garamond",serif;font-size:2rem;color:#fff}
+@keyframes floatAura{0%,100%{transform:scale(.98);opacity:.8}50%{transform:scale(1.03);opacity:1}}
+.grid-two,.grid-four{display:grid;gap:1.2rem}
+.grid-two{grid-template-columns:repeat(2,1fr)}
+.grid-four{grid-template-columns:repeat(4,1fr)}
+.panel{padding:2rem;border-radius:32px;background:var(--panel);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+.panel-strong{background:var(--panel-strong);border-color:rgba(216,238,252,.18)}
+.panel h3{font-size:1.9rem}
+.panel p{margin-top:.75rem;color:var(--mist-soft);line-height:1.82}
+.stat-band{padding-top:0;margin-top:-2rem}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.stat-card{padding:1.6rem;border-radius:28px;background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.09);box-shadow:0 22px 58px rgba(3,10,18,.24)}
+.stat-card strong{display:block;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(216,238,252,.6)}
+.stat-card span{display:block;margin-top:.5rem;font-family:"Cormorant Garamond",serif;font-size:2.35rem;color:#fff}
+.stat-card small{display:block;margin-top:.65rem;color:var(--mist-soft);line-height:1.65}
+.section-head{max-width:860px}
+.cards{margin-top:2.5rem}
+.market-card{position:relative;overflow:hidden}
+.market-card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,var(--accent-strong),transparent)}
+.market-card h3{font-size:1.7rem}
+.market-card ul,.channel-card ul,.ops-card ul,.kpi-list,.roadmap-card ul,.budget-card ul{list-style:none;margin-top:1rem}
+.market-card li,.channel-card li,.ops-card li,.kpi-list li,.roadmap-card li,.budget-card li{display:flex;gap:.7rem;color:var(--mist-soft);line-height:1.75;padding:.35rem 0}
+.market-card li::before,.channel-card li::before,.ops-card li::before,.kpi-list li::before,.roadmap-card li::before,.budget-card li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent-strong);margin-top:.7rem;flex-shrink:0}
+.thesis-shell{display:grid;grid-template-columns:.92fr 1.08fr;gap:1.2rem;align-items:stretch}
+.thesis-quote{padding:2.6rem;border-radius:36px;background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.08);display:grid;align-content:space-between}
+.thesis-quote p{font-family:"Cormorant Garamond",serif;font-size:2.35rem;line-height:1.12;color:#fff}
+.thesis-quote span{color:var(--mist-soft);letter-spacing:.18em;text-transform:uppercase;font-size:.68rem}
+.roadmap{margin-top:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.roadmap-card{padding:2rem 1.6rem;min-height:360px;border-radius:32px;background:linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 58px rgba(2,10,18,.22)}
+.roadmap-card strong,.budget-card strong,.timeline-tag{display:inline-flex;align-items:center;gap:.6rem;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(216,238,252,.72)}
+.timeline-tag::before,.budget-card strong::before{content:"";width:22px;height:1px;background:linear-gradient(90deg,var(--accent-strong),transparent)}
+.roadmap-card h3,.budget-card h3,.channel-card h3,.ops-card h3,.score-card h3{font-size:1.9rem;margin-top:1rem}
+.channel-card,.ops-card,.budget-card,.score-card{padding:2rem 1.6rem;border-radius:32px;background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08)}
+.budget-grid{margin-top:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.budget-card.featured{background:linear-gradient(180deg, rgba(149,201,242,.18), rgba(255,255,255,.04) 48%, rgba(255,255,255,.02));border-color:rgba(216,238,252,.18)}
+.budget-price{display:block;margin-top:.9rem;font-family:"Cormorant Garamond",serif;font-size:3.1rem;line-height:1;color:#fff}
+.budget-note{margin-top:.85rem;color:rgba(237,245,251,.58);line-height:1.75}
+.ops-grid{margin-top:2.5rem;display:grid;grid-template-columns:1.15fr .85fr;gap:1rem}
+.score-shell{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2.5rem}
+.cta-shell{padding:3rem;border-radius:40px;background:radial-gradient(circle at top right, rgba(149,201,242,.18), transparent 32%), linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:1.4rem;align-items:center}
+.cta-shell h2{font-size:3rem}
+.cta-shell p{margin-top:.9rem;max-width:700px;color:var(--mist-soft);line-height:1.85}
+footer{padding:0 0 2rem}
+.footer-shell{width:var(--wrap);margin:auto;padding:2rem 0 0;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:1rem;color:rgba(237,245,251,.48);font-size:.76rem}
+@media (max-width:1120px){.hero-grid,.thesis-shell,.ops-grid,.cta-shell,.grid-two,.grid-four,.score-shell,.stat-grid,.budget-grid,.roadmap{grid-template-columns:1fr}.proposal-stage{min-height:auto}}
+@media (max-width:720px){.wrap,.nav-shell{width:min(1220px,calc(100% - 1rem))}.hero{padding-top:7rem}.panel,.proposal-card,.roadmap-card,.channel-card,.ops-card,.budget-card,.score-card,.cta-shell,.thesis-quote,.stat-card{padding:1.4rem}.title{font-size:clamp(3rem,14vw,5rem)}.btn-main,.btn-ghost{min-width:100%}.nav-link{display:none}.brand-mark span{display:none}.proposal-grid{grid-template-columns:1fr}.cta-shell h2{font-size:2.3rem}.footer-shell{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body class="lang-en">
+<nav id="nav">
+  <div class="nav-shell">
+    <a href="#top" class="brand">
+      <img src="../assets/logo-pmt-cropped.png" alt="PMT logo">
+      <div class="brand-mark">
+        <b>PMT</b>
+        <span>Executive Growth Brief</span>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <a class="nav-link" href="#budgets"><span data-inline="en">Budget Scenarios</span><span data-inline="es">Escenarios de Inversion</span></a>
+      <div class="lang">
+        <button class="active" data-lang-switch="en" type="button">EN</button>
+        <button data-lang-switch="es" type="button">ES</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow"><span data-inline="en">Confidential Strategic Proposal</span><span data-inline="es">Propuesta Estrategica Confidencial</span></span>
+      <h1 class="title">
+        <span data-inline="en">A premium growth system for <em>Prestige Medical Tourism</em></span>
+        <span data-inline="es">Un sistema premium de crecimiento para <em>Prestige Medical Tourism</em></span>
+      </h1>
+      <p class="copy" data-lang="en">This brief translates PMT's current brand quality into a high-conviction marketing machine designed to generate qualified international leads, improve consultation quality, and close more high-ticket procedures across plastic surgery and regenerative medicine.</p>
+      <p class="copy" data-lang="es">Este brief convierte la calidad actual de la marca PMT en una maquina de marketing de alta conviccion, disenada para generar leads internacionales calificados, elevar la calidad de las consultas y cerrar mas procedimientos de alto ticket en cirugia plastica y medicina regenerativa.</p>
+      <div class="hero-actions">
+        <a href="#thesis" class="btn-main"><span data-inline="en">View Growth Thesis</span><span data-inline="es">Ver Tesis de Crecimiento</span></a>
+        <a href="#roadmap" class="btn-ghost"><span data-inline="en">Explore 90-Day Roadmap</span><span data-inline="es">Explorar Roadmap de 90 Dias</span></a>
+      </div>
+      <div class="hero-facts">
+        <span data-inline="en">Premium positioning</span><span data-inline="es">Posicionamiento premium</span>
+        <span data-inline="en">Bilingual funnel</span><span data-inline="es">Funnel bilingue</span>
+        <span data-inline="en">AI-assisted qualification</span><span data-inline="es">Calificacion asistida por IA</span>
+      </div>
+    </div>
+    <div class="proposal-stage reveal">
+      <div class="proposal-aura"></div>
+      <div class="proposal-card">
+        <div class="proposal-top">
+          <div>
+            <span class="proposal-badge">Executive Brief 2026</span>
+            <h3 data-lang="en">From elegant website to scalable acquisition engine</h3>
+            <h3 data-lang="es">De sitio elegante a motor escalable de adquisicion</h3>
+          </div>
+          <img src="../assets/logo-pmt-cropped.png" alt="PMT logo">
+        </div>
+        <p data-lang="en">The site already feels elevated. The opportunity now is to build trust architecture, paid acquisition, bilingual conversion flows, and premium follow-up systems that make the brand close like it looks.</p>
+        <p data-lang="es">El sitio ya se percibe elevado. La oportunidad ahora es construir arquitectura de confianza, adquisicion paga, flujos bilingues de conversion y sistemas premium de seguimiento para que la marca cierre como se ve.</p>
+        <div class="proposal-grid">
+          <div class="proposal-metric"><strong><span data-inline="en">Core Focus</span><span data-inline="es">Foco Central</span></strong><span data-lang="en">Plastic Surgery</span><span data-lang="es">Cirugia Plastica</span></div>
+          <div class="proposal-metric"><strong><span data-inline="en">Growth Lane</span><span data-inline="es">Linea de Crecimiento</span></strong><span data-lang="en">Regenerative</span><span data-lang="es">Regenerativa</span></div>
+          <div class="proposal-metric"><strong><span data-inline="en">Primary Markets</span><span data-inline="es">Mercados Primarios</span></strong><span data-lang="en">USA + Canada</span><span data-lang="es">USA + Canada</span></div>
+          <div class="proposal-metric"><strong><span data-inline="en">Sales Model</span><span data-inline="es">Modelo Comercial</span></strong><span data-lang="en">AI + Human</span><span data-lang="es">IA + Humano</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker"><span data-inline="en">Market Architecture</span><span data-inline="es">Arquitectura de Mercado</span></p>
+      <h2 class="title" data-lang="en">A four-part system built to create <em>trust, demand, qualification, and closure</em></h2>
+      <h2 class="title" data-lang="es">Un sistema de cuatro capas para crear <em>confianza, demanda, calificacion y cierre</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid-four cards">
+      <article class="panel panel-strong reveal">
+        <h3 data-lang="en">01. Brand Foundation</h3>
+        <h3 data-lang="es">01. Fundacion de Marca</h3>
+        <p data-lang="en">Sharper offer positioning, procedure-specific landing pages, authority framing, and a premium visual environment that reduces perceived risk.</p>
+        <p data-lang="es">Posicionamiento mas claro de la oferta, landings por procedimiento, encuadre de autoridad y un entorno visual premium que reduzca el riesgo percibido.</p>
+      </article>
+      <article class="panel reveal">
+        <h3 data-lang="en">02. Demand Generation</h3>
+        <h3 data-lang="es">02. Generacion de Demanda</h3>
+        <p data-lang="en">Google Ads for high intent, Meta for awareness and remarketing, and SEO content to build lower-CAC demand over time.</p>
+        <p data-lang="es">Google Ads para alta intencion, Meta para awareness y remarketing, y SEO para construir demanda con menor CAC a mediano plazo.</p>
+      </article>
+      <article class="panel reveal">
+        <h3 data-lang="en">03. AI Qualification</h3>
+        <h3 data-lang="es">03. Calificacion con IA</h3>
+        <p data-lang="en">A bilingual agent that filters treatment intent, budget, timeline, geography, and readiness before human intervention.</p>
+        <p data-lang="es">Un agente bilingue que filtra interes, presupuesto, tiempo, geografia y nivel de decision antes de la intervencion humana.</p>
+      </article>
+      <article class="panel reveal">
+        <h3 data-lang="en">04. Senior Closing</h3>
+        <h3 data-lang="es">04. Cierre Senior</h3>
+        <p data-lang="en">A consultative sales specialist working only with qualified leads, with structured WhatsApp and follow-up sequences.</p>
+        <p data-lang="es">Una especialista comercial consultiva trabajando solo leads filtrados, con secuencias estructuradas de WhatsApp y seguimiento.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker"><span data-inline="en">Channel Plan</span><span data-inline="es">Plan de Canales</span></p>
+      <h2 class="title" data-lang="en">Every channel has a role. The system works when each one carries a <em>specific job</em>.</h2>
+      <h2 class="title" data-lang="es">Cada canal tiene un rol. El sistema funciona cuando cada uno cumple un <em>trabajo especifico</em>.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid-two cards">
+      <article class="channel-card reveal">
+        <h3>Google Ads</h3>
+        <ul>
+          <li data-lang="en">Primary performance channel for procedure-intent demand.</li>
+          <li data-lang="es">Canal principal de performance para demanda con intencion de procedimiento.</li>
+          <li data-lang="en">Separate campaigns by geography, language, and specialty.</li>
+          <li data-lang="es">Campanas separadas por geografia, idioma y especialidad.</li>
+          <li data-lang="en">Focus on plastic surgery and regenerative medicine first.</li>
+          <li data-lang="es">Foco inicial en cirugia plastica y medicina regenerativa.</li>
+        </ul>
+      </article>
+      <article class="channel-card reveal">
+        <h3>Meta Ads</h3>
+        <ul>
+          <li data-lang="en">Brand awareness, WhatsApp acquisition, and remarketing.</li>
+          <li data-lang="es">Brand awareness, captacion por WhatsApp y remarketing.</li>
+          <li data-lang="en">Short-form educational content and premium experience creatives.</li>
+          <li data-lang="es">Contenido educativo corto y creativos orientados a experiencia premium.</li>
+          <li data-lang="en">Avoid aggressive before/after claims and sensational messaging.</li>
+          <li data-lang="es">Evitar before/after agresivo y mensajes sensacionalistas.</li>
+        </ul>
+      </article>
+      <article class="channel-card reveal">
+        <h3>SEO + Content</h3>
+        <ul>
+          <li data-lang="en">Build authority around Medellin, international care, and procedure education.</li>
+          <li data-lang="es">Construir autoridad sobre Medellin, atencion internacional y educacion por procedimiento.</li>
+          <li data-lang="en">Create procedure pages, trust pages, and comparison content.</li>
+          <li data-lang="es">Crear paginas de procedimiento, paginas de confianza y comparativos.</li>
+          <li data-lang="en">Lower long-term customer acquisition cost.</li>
+          <li data-lang="es">Reducir el costo de adquisicion a mediano plazo.</li>
+        </ul>
+      </article>
+      <article class="channel-card reveal">
+        <h3>WhatsApp + Email</h3>
+        <ul>
+          <li data-lang="en">Fast-response conversion layer with bilingual nurture flows.</li>
+          <li data-lang="es">Capa de conversion de respuesta rapida con nurtures bilingues.</li>
+          <li data-lang="en">Essential for high-ticket follow-up and consultation attendance.</li>
+          <li data-lang="es">Esencial para seguimiento de alto ticket y asistencia a consulta.</li>
+          <li data-lang="en">Should be tightly connected to CRM and the AI agent.</li>
+          <li data-lang="es">Debe estar conectada al CRM y al agente IA.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker"><span data-inline="en">90-Day Rollout</span><span data-inline="es">Despliegue 90 Dias</span></p>
+      <h2 class="title" data-lang="en">A roadmap designed to move PMT from elegant presence to <em>measurable pipeline</em></h2>
+      <h2 class="title" data-lang="es">Un roadmap para mover a PMT de presencia elegante a <em>pipeline medible</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="roadmap">
+      <article class="roadmap-card reveal">
+        <strong class="timeline-tag">Days 1-30</strong>
+        <h3 data-lang="en">Foundation Sprint</h3>
+        <h3 data-lang="es">Sprint de Fundacion</h3>
+        <ul>
+          <li data-lang="en">Procedure landing pages for plastic surgery and regenerative medicine.</li>
+          <li data-lang="es">Landings de procedimiento para cirugia plastica y medicina regenerativa.</li>
+          <li data-lang="en">GA4, Meta Pixel, Search Console, CRM, and event tracking setup.</li>
+          <li data-lang="es">Implementacion de GA4, Meta Pixel, Search Console, CRM y tracking.</li>
+          <li data-lang="en">WhatsApp workflows, intake forms, and AI qualification scripts.</li>
+          <li data-lang="es">Workflows de WhatsApp, formularios y scripts de calificacion con IA.</li>
+          <li data-lang="en">Launch first Google high-intent and Meta awareness campaigns.</li>
+          <li data-lang="es">Lanzar primeras campanas de Google high-intent y Meta awareness.</li>
+        </ul>
+      </article>
+      <article class="roadmap-card reveal">
+        <strong class="timeline-tag">Days 31-60</strong>
+        <h3 data-lang="en">Optimization Sprint</h3>
+        <h3 data-lang="es">Sprint de Optimizacion</h3>
+        <ul>
+          <li data-lang="en">Refine campaigns by geography, language, and lead quality.</li>
+          <li data-lang="es">Refinar campanas por geografia, idioma y calidad de lead.</li>
+          <li data-lang="en">Publish first SEO articles and conversion-focused trust content.</li>
+          <li data-lang="es">Publicar primeros articulos SEO y contenido de confianza.</li>
+          <li data-lang="en">Introduce YouTube shorts and physician/expertise storytelling.</li>
+          <li data-lang="es">Introducir YouTube shorts y contenido de autoridad medica.</li>
+          <li data-lang="en">Tune intake questions and qualification scoring using real lead data.</li>
+          <li data-lang="es">Ajustar preguntas y scoring de calificacion con data real.</li>
+        </ul>
+      </article>
+      <article class="roadmap-card reveal">
+        <strong class="timeline-tag">Days 61-90</strong>
+        <h3 data-lang="en">Scale Sprint</h3>
+        <h3 data-lang="es">Sprint de Escala</h3>
+        <ul>
+          <li data-lang="en">Scale winning ad sets and allocate budget by country and specialty.</li>
+          <li data-lang="es">Escalar anuncios ganadores y reasignar presupuesto por pais y especialidad.</li>
+          <li data-lang="en">Add new landings, retargeting layers, and tighter close-rate reporting.</li>
+          <li data-lang="es">Agregar nuevas landings, retargeting y reporting de cierre.</li>
+          <li data-lang="en">Launch partnerships, referral channels, and high-trust content assets.</li>
+          <li data-lang="es">Lanzar alianzas, referidos y activos de confianza.</li>
+          <li data-lang="en">Formalize sales playbook and escalation rules for senior closers.</li>
+          <li data-lang="es">Formalizar playbook comercial y reglas de escalamiento para cierres senior.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="budgets">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker"><span data-inline="en">Investment Options</span><span data-inline="es">Opciones de Inversion</span></p>
+      <h2 class="title" data-lang="en">Three investment levels aligned with execution depth and <em>speed to traction</em></h2>
+      <h2 class="title" data-lang="es">Tres niveles de inversion alineados con profundidad de ejecucion y <em>velocidad de traccion</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="budget-grid">
+      <article class="budget-card reveal">
+        <strong><span data-inline="en">Scenario 1</span><span data-inline="es">Escenario 1</span></strong>
+        <h3 data-lang="en">Validation Build</h3>
+        <h3 data-lang="es">Construccion de Validacion</h3>
+        <span class="budget-price">USD 1.5K-3K</span>
+        <p class="budget-note" data-lang="en">For early traction, first-party data generation, and asset creation without overcommitting.</p>
+        <p class="budget-note" data-lang="es">Para primeras validaciones, generacion de data propia y creacion de activos sin sobredimensionar la inversion.</p>
+        <ul>
+          <li data-lang="en">Lean Google + Meta testing.</li>
+          <li data-lang="es">Testing lean en Google + Meta.</li>
+          <li data-lang="en">Basic content cadence and core landing pages.</li>
+          <li data-lang="es">Cadencia basica de contenido y landings principales.</li>
+          <li data-lang="en">Part-time growth and media support.</li>
+          <li data-lang="es">Soporte part-time de growth y pauta.</li>
+        </ul>
+      </article>
+      <article class="budget-card featured reveal">
+        <strong><span data-inline="en">Scenario 2</span><span data-inline="es">Escenario 2</span></strong>
+        <h3 data-lang="en">Core Growth Engine</h3>
+        <h3 data-lang="es">Motor Central de Crecimiento</h3>
+        <span class="budget-price">USD 3K-6K</span>
+        <p class="budget-note" data-lang="en">The recommended operating range to build a real acquisition and conversion system.</p>
+        <p class="budget-note" data-lang="es">El rango recomendado para construir un sistema real de adquisicion y conversion.</p>
+        <ul>
+          <li data-lang="en">Structured paid media by specialty and geography.</li>
+          <li data-lang="es">Paid media estructurado por especialidad y geografia.</li>
+          <li data-lang="en">Consistent SEO/content production.</li>
+          <li data-lang="es">Produccion consistente de SEO y contenido.</li>
+          <li data-lang="en">Senior marketing guidance with bilingual copy and automation support.</li>
+          <li data-lang="es">Direccion senior de marketing con copy bilingue y soporte de automatizacion.</li>
+        </ul>
+      </article>
+      <article class="budget-card reveal">
+        <strong><span data-inline="en">Scenario 3</span><span data-inline="es">Escenario 3</span></strong>
+        <h3 data-lang="en">Authority Scale</h3>
+        <h3 data-lang="es">Escala de Autoridad</h3>
+        <span class="budget-price">USD 10K+</span>
+        <p class="budget-note" data-lang="en">For fast brand positioning, premium production, deeper funnel sophistication, and senior specialist execution.</p>
+        <p class="budget-note" data-lang="es">Para posicionamiento acelerado, produccion premium, mayor sofisticacion del funnel y ejecucion con especialistas senior.</p>
+        <ul>
+          <li data-lang="en">High-level paid media, CRO, and SEO strategy.</li>
+          <li data-lang="es">Paid media, CRO y SEO de alto nivel.</li>
+          <li data-lang="en">Premium video/photo production and selective PR.</li>
+          <li data-lang="es">Produccion audiovisual premium y PR selectivo.</li>
+          <li data-lang="en">Stronger reporting, segmentation, and executive oversight.</li>
+          <li data-lang="es">Mayor reporting, segmentacion y supervision ejecutiva.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker"><span data-inline="en">Operating Model</span><span data-inline="es">Modelo Operativo</span></p>
+      <h2 class="title" data-lang="en">The marketing stack should feel premium on the outside and <em>disciplined on the inside</em></h2>
+      <h2 class="title" data-lang="es">El stack de marketing debe sentirse premium por fuera y <em>disciplinado por dentro</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="ops-grid">
+      <article class="ops-card reveal">
+        <h3 data-lang="en">AI Qualification Layer</h3>
+        <h3 data-lang="es">Capa de Calificacion con IA</h3>
+        <ul>
+          <li data-lang="en">Capture treatment interest, language, budget range, timeline, geography, and travel intent.</li>
+          <li data-lang="es">Capturar interes, idioma, rango de presupuesto, tiempo, geografia e intencion de viaje.</li>
+          <li data-lang="en">Classify leads into cold, warm, hot, and route by priority.</li>
+          <li data-lang="es">Clasificar leads en frio, tibio y caliente, y enrutar por prioridad.</li>
+          <li data-lang="en">Reduce wasted sales time and create cleaner handoff to closers.</li>
+          <li data-lang="es">Reducir tiempo desperdiciado de ventas y mejorar el handoff al cierre.</li>
+        </ul>
+      </article>
+      <article class="ops-card reveal">
+        <h3 data-lang="en">Senior Sales Layer</h3>
+        <h3 data-lang="es">Capa Comercial Senior</h3>
+        <ul>
+          <li data-lang="en">Human closer focused on high-intent consultative conversations.</li>
+          <li data-lang="es">Cierre humano enfocado en conversaciones consultivas de alta intencion.</li>
+          <li data-lang="en">Structured WhatsApp follow-up and consultation prep.</li>
+          <li data-lang="es">Seguimiento estructurado por WhatsApp y preparacion de consulta.</li>
+          <li data-lang="en">Conversion reporting by source, procedure, and geography.</li>
+          <li data-lang="es">Reporte de conversion por fuente, procedimiento y geografia.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker"><span data-inline="en">Success Metrics</span><span data-inline="es">Metricas de Exito</span></p>
+      <h2 class="title" data-lang="en">The plan should be judged by pipeline quality, not vanity. These are the <em>numbers that matter.</em></h2>
+      <h2 class="title" data-lang="es">El plan debe medirse por calidad de pipeline, no por vanidad. Estos son los <em>numeros que importan.</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="score-shell">
+      <article class="score-card reveal">
+        <h3 data-lang="en">Marketing KPIs</h3>
+        <h3 data-lang="es">KPIs de Marketing</h3>
+        <ul class="kpi-list">
+          <li data-lang="en">Traffic quality by country and language.</li>
+          <li data-lang="es">Calidad de trafico por pais e idioma.</li>
+          <li data-lang="en">Landing page conversion rate.</li>
+          <li data-lang="es">Tasa de conversion de landings.</li>
+          <li data-lang="en">Cost per lead and cost per qualified consultation.</li>
+          <li data-lang="es">Costo por lead y costo por consulta calificada.</li>
+          <li data-lang="en">WhatsApp response speed and nurture engagement.</li>
+          <li data-lang="es">Velocidad de respuesta en WhatsApp y engagement de nurture.</li>
+        </ul>
+      </article>
+      <article class="score-card reveal">
+        <h3 data-lang="en">Sales KPIs</h3>
+        <h3 data-lang="es">KPIs Comerciales</h3>
+        <ul class="kpi-list">
+          <li data-lang="en">Lead-to-consultation rate.</li>
+          <li data-lang="es">Tasa de lead a consulta.</li>
+          <li data-lang="en">Consultation show rate.</li>
+          <li data-lang="es">Tasa de asistencia a consulta.</li>
+          <li data-lang="en">Consultation-to-procedure close rate.</li>
+          <li data-lang="es">Tasa de cierre de consulta a procedimiento.</li>
+          <li data-lang="en">Revenue by source, procedure, and geography.</li>
+          <li data-lang="es">Ingresos por fuente, procedimiento y geografia.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-shell reveal">
+      <div>
+        <p class="kicker"><span data-inline="en">Recommended Next Step</span><span data-inline="es">Siguiente Paso Recomendado</span></p>
+        <h2 data-lang="en">Approve the foundation sprint and begin building the funnel that matches the brand.</h2>
+        <h2 data-lang="es">Aprobar el sprint de fundacion y comenzar a construir el funnel que este nivel de marca merece.</h2>
+        <p data-lang="en">The fastest path to traction is to launch two conversion-focused landing pages, implement AI qualification, connect CRM and WhatsApp, and activate Google high-intent acquisition first.</p>
+        <p data-lang="es">La ruta mas rapida hacia traccion es lanzar dos landings enfocadas en conversion, implementar la calificacion con IA, conectar CRM y WhatsApp, y activar primero la adquisicion high-intent en Google.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn-main" href="https://wa.me/573205619640" target="_blank" rel="noreferrer"><span data-inline="en">Approve & Start</span><span data-inline="es">Aprobar e Iniciar</span></a>
+        <a class="btn-ghost" href="mailto:info@prestigemedicaltourism.com"><span data-inline="en">Request Full Deck</span><span data-inline="es">Solicitar Deck Completo</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-shell">
+    <span>PMT Executive Growth Brief</span>
+    <span data-lang="en">Confidential presentation layer prepared for strategic review.</span>
+    <span data-lang="es">Capa de presentacion confidencial preparada para revision estrategica.</span>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById("nav");
+const buttons = document.querySelectorAll("[data-lang-switch]");
+
+function setLang(lang) {
+  document.body.classList.remove("lang-en", "lang-es");
+  document.body.classList.add(`lang-${lang}`);
+  document.documentElement.lang = lang;
+  buttons.forEach((button) => button.classList.toggle("active", button.dataset.langSwitch === lang));
+}
+
+buttons.forEach((button) => button.addEventListener("click", () => setLang(button.dataset.langSwitch)));
+addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 40));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+}, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+</script>
+</body>
+</html>
